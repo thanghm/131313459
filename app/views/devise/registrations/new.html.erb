@@ -2,10 +2,9 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button class="close" data-dismiss="modal">x</button>
-          <h1 class="text-center">Sign Up</h1>
-            <p class="notice"><%= notice %></p>
-              <p class="alert"><%= alert %></p>
+        <h1 class="text-center">Sign Up</h1>
+          <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
       </div>
 
       <div class="modal-body">
@@ -17,15 +16,15 @@
 
                   <div><%= f.label :email, :class => 'sr-only' %><br />
 
-                  <%= f.email_field :email, :autofocus => true, :class => 'form-control', :placeholder => 'somebody@example.com' %></div>
+                  <%= f.email_field :email, :autofocus => true, :name => "user[email]", :class => 'form-control', :placeholder => 'somebody@example.com' %></div>
 
                   <div><%= f.label :password, :class => 'sr-only' %><br />
 
-                  <%= f.password_field :password, :class => 'form-control', :placeholder => 'Password..' %></div>
+                  <%= f.password_field :password, :name => "user[password]", :class => 'form-control', :placeholder => 'Password..' %></div>
 
                   <div><%= f.label :password_confirmation, :class => 'sr-only' %><br />
 
-                <%= f.password_field :password_confirmation, :class => 'form-control', :placeholder => 'Confirmation Password..' %></div>
+                <%= f.password_field :password_confirmation, :name => "user[password_confirmation]", :class => 'form-control', :placeholder => 'Confirmation Password..' %></div>
             <%= render "devise/shared/links" %>
       </div>
 
@@ -33,7 +32,7 @@
           <div class="col-md-12">
               <%= f.submit "Sign up", :class => 'btn btn-small btn-success' %>
               <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-              <% end %>
+              <% end -%>
           </div>
       </div>              
     </div>  

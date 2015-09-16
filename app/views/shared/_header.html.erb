@@ -1,116 +1,114 @@
 <div id="header">
-		<div class="tagnav">
-	    <li><img class="phone" src="http://st.f1.vnecdn.net/myvne/images/icons/hotline_transparent.png" alt=""><b> 0125.125.1325</b> (HN) - <b>0101.001.0001</b> (TP HCM)
+	<div class="tagnav">
+    <li><img class="phone" src="http://st.f1.vnecdn.net/myvne/images/icons/hotline_transparent.png" alt=""><b> 0125.125.1325</b> (HN) - <b>0101.001.0001</b> (TP HCM)
+    </li>
+    <li>
+      	<iframe src="//www.facebook.com/plugins/like.php?locale=en_US&amp;href=https://www.facebook.com/congdongvnexpress&amp;width&amp;layout=button&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=283547481836738" scrolling="no" frameborder="0" style="border:none; margin-bottom:-7px; overflow:hidden; height:21px; width:55px;" allowtransparency="true"></iframe>
+
+    </li>
+    <div class="loginform">
+	    <li class="hdlogin">
+				  <!-- Button trigger modal -->
+					<button class="btn btn-link" data-toggle="modal" data-target="#loginmodal">
+				    <%= link_to "Log in" %>
+				  </button>
+
+				  <!-- Modal -->
+				  <div id="loginmodal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+					  <div class="modal-dialog">
+						  <div class="modal-content">
+								    <div class="modal-header">
+								      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+								          <h2 class="text-center">Login</h2>
+								          <div class="text-center push-top-xs" style="margin-bottom: 10px;
+															">Choose one of the following sign in methods.</div>
+								          <div class="social-bar text-center">
+                            <button class="btn btn-md btn-facebook push-top-xs" onclick="location.href = '#'" style="background: #3b5998; color: #fff !important;">
+					                    <i class="fa fa-fw fa-facebook"></i> <span> Facebook</span></button>
+					                        <button class="btn btn-md btn-google push-top-xs" onclick="location.href = '#'" style="background: #dd4b39;color: #fff !important;">
+					                    <i class="fa fa-fw fa-google"></i> <span> Google</span></button>
+                          </div>
+								      </div>
+								      <div class="modal-body">
+								      <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:id => "new_user"}, :format => :json, :remote => true ) do |f| %>
+												<div class="form-group"><%= f.label :email, :class => 'sr-only' %><br />
+
+												<%= f.email_field :email, :autofocus => true, :name => "user[email]", :class => 'form-control', :placeholder => 'somebody@example.com' %></div>
+
+												<div class="form-group"><%= f.label :password, :class => 'sr-only' %><br />
+
+												<%= f.password_field :password, :class => 'form-control', :name => "user[password]", :placeholder => 'Password..' %></div>
+
+												<% if devise_mapping.rememberable? -%>
+
+												<div class="form-group" style="margin-top:5px; margin-bottom:0;"><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+												<% end -%>
+											<a class="btn btn-link" onClick='window.location.href = "/users/sign_up" '>Register</a>
+											<a class="btn btn-link" onClick='window.location.href = "/users/password/new" '>Reset password</a>
+
+						      		</div>
+								      <div class="modal-footer">
+								        <div class="col-md-12">
+								          <%= f.submit "Sign in", :class => 'btn btn-small btn-success' %>
+								          <% end %>
+								          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+										  	</div>	
+								     	</div>
+						      </div>
+						  </div>						  
+					</div>				
 	    </li>
-	    <li>
-	      	<iframe src="//www.facebook.com/plugins/like.php?locale=en_US&amp;href=https://www.facebook.com/congdongvnexpress&amp;width&amp;layout=button&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=283547481836738" scrolling="no" frameborder="0" style="border:none; margin-bottom:-7px; overflow:hidden; height:21px; width:55px;" allowtransparency="true"></iframe>
 
-	    </li>
-	    <div class="loginform">
-		    <li>
-					  <!-- Button trigger modal -->
-					  <button class="btn btn-link" data-toggle="modal" data-target="#loginmodal">
-					    Login
-					  </button>
+	    <li class="hdregis">
+	      <!-- Button trigger modal -->
+				  <button class="btn btn-link" data-toggle="modal" data-target="#regiter_">
+				    <%= link_to "Sign up", new_user_registration_path %>
+				  </button>
 
-					  <!-- Modal -->
-					  <div id="loginmodal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-						  <div class="modal-dialog">
-							  <div class="modal-content">
-							      <div class="modal-header">
-							          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-							          <h2 class="text-center">Login</h2>
-							      </div>
-							      <div class="modal-body">
-							          <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+				  <!-- Modal -->
+					<div class="modal fade" id="regiter_" tabindex="-1" role="dialog" aria-hidden="true">
+					  <div class="modal-dialog">
+						<div class="modal-content">
+						 <div class="modal-header">
+							<button class="close" data-dismiss="modal">x</button>
+							<h2 class="text-center">Sign Up</h2>
+						 </div>
 
-											<div class="form-group"><%= f.label :email, :class => 'sr-only' %><br />
+						<div class="modal-body">
 
-											<%= f.email_field :email, :autofocus => true, :class => 'form-control', :placeholder => 'somebody@example.com' %></div>
+								<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 
-											<div class="form-group"><%= f.label :password, :class => 'sr-only' %><br />
+								<%= devise_error_messages! %>
 
-											<%= f.password_field :password, :class => 'form-control', :placeholder => 'Password..' %></div>
+								<div><%= f.label :email, :class => 'sr-only' %><br />
 
-											<% if devise_mapping.rememberable? -%>
+								<%= f.email_field :email, :name => "user[email]", :autofocus => true, :class => 'form-control', :placeholder => 'somebody@example.com' %></div>
 
-											<div class="form-group" style="margin-top:5px; margin-bottom:0;"><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+								<div><%= f.label :password, :class => 'sr-only' %><br />
+								
+								<%= f.password_field :password, :name => "user[password]", :class => 'form-control', :placeholder => 'Password..' %></div>
 
-											<% end -%>
+								<div><%= f.label :password_confirmation, :class => 'sr-only' %><br />
 
-										
-										
-							      </div>
-							      <div class="modal-footer">
-							          <div class="col-md-12">
-							          <%= f.submit "Sign in", :class => 'btn btn-small btn-success' %>
-							          <% end %>
-							          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-									  </div>	
-							      </div>
-							  </div>
-							  </div>
-							  
-						</div>
-					
-		    </li>
-		    <li class="hdregis">
-		      <!-- Button trigger modal -->
-					  <button class="btn btn-link" data-toggle="modal" data-target="#regiter_">
-					    Register
-					  </button>
-
-					  <!-- Modal -->
-						<div class="modal fade" id="regiter_" tabindex="-1" role="dialog" aria-hidden="true">
-						   <div class="modal-dialog">
-							<div class="modal-content">
-
-							 <div class="modal-header">
-
-								<button class="close" data-dismiss="modal">x</button>
-
-								<h2 class="text-center">Sign Up</h2>
-
-							 </div>
-
-							<div class="modal-body">
-
-									<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-
-									<%= devise_error_messages! %>
-
-									<div><%= f.label :email, :class => 'sr-only' %><br />
-
-									<%= f.email_field :email, :autofocus => true, :class => 'form-control', :placeholder => 'somebody@example.com' %></div>
-
-									<div><%= f.label :password, :class => 'sr-only' %><br />
-									
-									<%= f.password_field :password, :class => 'form-control', :placeholder => 'Password..' %></div>
-
-									<div><%= f.label :password_confirmation, :class => 'sr-only' %><br />
-
-									<%= f.password_field :password_confirmation, :class => 'form-control', :placeholder => 'Confirmation Password..' %></div>
-
-									</div>
-
-							<div class="modal-footer">
-								<div class="col-md-12">
-									<%= f.submit "Sign up", :class => 'btn btn-small btn-success' %>
-									<button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-									<% end %>
+								<%= f.password_field :password_confirmation, :name => "user[password_confirmation]", :class => 'form-control', :placeholder => 'Confirmation Password..' %></div>
+								<a class="btn btn-link" onClick='window.location.href = "/users/sign_in" '>Sign in</a>
 								</div>
-							</div>							
-							</div>	
-						  </div>		
-						</div>
-		    </li>
-		    <li class="block_search_web">
-			     <%= form_tag(@post, :method => "get", id: "search-form") do %>
-					<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-					<%= submit_tag "Go!", :name => nil %>
-				 <% end %>
-	    	</li>
-	    </div>
-	    
+							
+						<div class="modal-footer">
+							<div class="col-md-12">
+								<%= f.submit "Sign up", :class => 'btn btn-small btn-success' %>
+								<button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+								<% end -%>
+							</div>
+						</div>							
+					 </div>	
+					</div>		
+				</div>
+	    </li>
+	    <li class="btn_logout">
+	    	<%= link_to "Log Out", destroy_user_session_path %>
+	    </li>	   
     </div>
+    
+  </div>
 </div>

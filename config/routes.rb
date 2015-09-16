@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-
-  devise_for :users
+  
+  devise_for :users, :controllers => {sessions: 'sessions'}
     get 'users' => 'posts#index'
+    post 'users.user' => 'posts#index'
   
   resources :posts
   

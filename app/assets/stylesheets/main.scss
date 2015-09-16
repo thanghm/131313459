@@ -59,18 +59,6 @@ span.mytext{
   border: 1px solid #309;
   margin-top: 5px;
 }
-#imgright{
-	position: fixed; /*auto*/
-	border-radius: 5px;		
-	margin-top: 300px;
-	margin-right: 10px;
-	text-align: center;
-}
-#dgr{
-	float: right;
-	height: 80px;
-	width: 80px;
-}
 #header {
   background-color:#eee;
   margin: 0;
@@ -113,15 +101,15 @@ span.mytext{
 }
 
 .icon_seach_web {
-    float: left;
-    height: 20px;
-    width: 20px;
-    border-top: 1px solid silver;
-    border-right: 1px solid silver;
-    border-bottom: 1px solid silver;
-    cursor: pointer;
-    font-size: 0;
-    line-height: 0;
+  float: left;
+  height: 20px;
+  width: 20px;
+  border-top: 1px solid silver;
+  border-right: 1px solid silver;
+  border-bottom: 1px solid silver;
+  cursor: pointer;
+  font-size: 0;
+  line-height: 0;
 }
 
 
@@ -140,6 +128,7 @@ section{
 	border-radius: 5px;
 	display: block;
 	margin-top: 15px;
+	padding: 10px;
 }
 
 .tabconten{
@@ -168,7 +157,7 @@ section{
 	border: 1px solid #dddddd;
 	border-radius: 5px;
 	background-color: #333;
-
+	padding: 5px;
 }
 .block_search{
 	padding-top: 5px;
@@ -224,4 +213,42 @@ section{
 
 #regiter_ #error_explanation h2{
 	background-color: #fff;
+}
+
+.btn_logout{
+	
+}
+.btn_logout a:visited{
+	color: black;
+}
+.btn_logout a:hover{
+	background-color: #eee;
+	color: #428bca;
+	text-decoration: underline; 
+}
+#content .page-header{
+	margin: 0;
+}
+#content .table.table-striped{
+	border: 1px solid #dddddd;
+}
+.form-horizontal textarea.form-control{
+	height: 110px;
+	resize: vertical;
+}
+#homebt{
+	display: none;
+}
+#homebt a:hover{
+  background-color: #428bca;
+  text-decoration: none;
+  color: #666;
+}
+#loginss a{
+}
+#loginss a:hover{
+	background-color: #5cb85c;
+  text-decoration: none;
+  color: #666;
+  cursor: inherit;
 }

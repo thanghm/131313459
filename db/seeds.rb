@@ -78,5 +78,5 @@
 # puts "#{Post.count} posts created"
 #topic = Topic.create([{ topic: 'Thoi su' }, { topic: 'The gioi' }, { topic: 'Kinh doanh' }, { topic: 'Giai tri' }, { topic: 'The thao'}, { topic: 'Phap luat'}, { topic: 'Giao duc'}, { topic: 'Suc khoe'}])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-post = Post.create([{title: 'laman', body: 'chiem', published: true}])
-user = User.create([{email: '123@qwe.com', password: '12345678'}])
+# post = Post.create([{title: 'laman', body: 'chiem', published: true}])
+# user = User.create([{email: '123@qwe.com', password: '12345678'}])

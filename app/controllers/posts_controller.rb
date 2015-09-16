@@ -15,6 +15,11 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    if params[:search]
+      @posts = Post.search(params[:search]).order("created_at DESC")
+    else
+      @posts = Post.all.order('created_at DESC')
+    end
   end
 
   def new
@@ -26,13 +31,12 @@ class PostsController < ApplicationController
   end
   
   def create
+    @post.user_id = User.find(id)
     @post = Post.new(post_params)
 
     if @post.save
-      flash[:notice] = "Post was saved."
-      redirect_to [@topic, @post]
+      redirect_to [@post]
     else
-      flash[:error] = "There was an error saving the post. Please try again."
       render :new
     end
   end
@@ -65,6 +69,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :published)
+    params.require(:post).permit(:title, :body, :published, :salary, :user_id , :categories, :location, :position, :joblevel)
   end
 end

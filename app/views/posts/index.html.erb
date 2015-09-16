@@ -7,10 +7,12 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
-      <th><%= model_class.human_attribute_name(:body) %></th>
-      <th><%= model_class.human_attribute_name(:published) %></th>
-      <th><%= model_class.human_attribute_name(:rank) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%= model_class.human_attribute_name(:categories) %></th>
+      <th><%= model_class.human_attribute_name(:location) %></th>
+      <th><%= model_class.human_attribute_name(:position) %></th>
+      <th><%= model_class.human_attribute_name(:joblevel) %></th>
+      <th><%= model_class.human_attribute_name(:salary) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -19,11 +21,15 @@
       <tr>
         <td><%= link_to post.id, post %></td>
         <td><%= post.title %></td>
-        <td><%= post.body %></td>
-        <td><%= post.published %></td>
-        <td><%= post.rank %></td>
-        <td><%=l post.created_at %></td>
+        <td><%= post.created_at %></td>
+        <td><%= post.categories %></td>
+        <td><%= post.location %></td>
+        <td><%= post.position %></td>
+        <td><%= post.joblevel %></td>
+        <td><%= post.salary %></td>
         <td>
+          <%= link_to t('.show', :default => t("helpers.links.view")),
+                      post, :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_post_path(post), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
