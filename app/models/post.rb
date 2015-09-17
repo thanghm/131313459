@@ -1,12 +1,10 @@
 class Post < ActiveRecord::Base
-	def self.search(search)
-	  where("posts.tittle ILIKE ?", "%#{search}%") 
-	  where("posts.body ILIKE ?", "%#{search}%")
-	  where("posts.categories ILIKE ?", "%#{search}%")
-	  where("posts.location ILIKE ?", "%#{search}%")
-	  where("posts.position ILIKE ?", "%#{search}%")
-	  where("posts.joblevel ILIKE ?", "%#{search}%")
-	  where("posts.salary ILIKE ?", "%#{search}%")
-	end
+	
+	scope :title, -> (title) { where("posts.title ilike ?", "#{title}%")}
+	scope :categories, -> (categories) { where("posts.categories ilike ?", "#{categories}%")}
+	scope :salary, -> (salary) { where("posts.salary ilike ?", "#{salary}%")}
+	scope :location, -> (location) { where("posts.location ilike ?", "#{location}%")}
+
 	belongs_to :user
+
 end

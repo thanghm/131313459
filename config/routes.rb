@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   
+  get 'locations/index'
+
+  get 'locations/show'
+
+  get 'locations/edit'
+
+  get 'locations/update'
+
   devise_for :users, :controllers => {sessions: 'sessions'}
     get 'users' => 'posts#index'
     post 'users.user' => 'posts#index'

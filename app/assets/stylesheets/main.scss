@@ -118,7 +118,7 @@ span.mytext{
   padding: 1px;
 }
 #footer p{
-	font-size: 10px;
+	font-size: 12px;
 	color:black;
   clear:both;
   text-align:center;
@@ -251,4 +251,14 @@ section{
   text-decoration: none;
   color: #666;
   cursor: inherit;
+}
+#dlhrz dt{
+	text-align: left;
+}
+#dlhrz .mdname{
+	margin-left: 40px;
+}
+
+body #dlhrz{
+	font-size: 14px;
 }

@@ -3,23 +3,123 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
-  <dd><%= @post.title %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:body) %>:</strong></dt>
-  <dd><%= @post.body %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:created_at) %>:</strong></dt>
-  <dd><%= @post.published %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:categories) %>:</strong></dt>
-  <dd><%= @post.categories %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:location) %>:</strong></dt>
-  <dd><%= @post.location %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:position) %>:</strong></dt>
-  <dd><%= @post.position %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:joblevel) %>:</strong></dt>
-  <dd><%= @post.joblevel %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:salary) %>:</strong></dt>
-  <dd><%= @post.salary %></dd>
+<dl class="dl-horizontal" id="dlhrz">
+  <div class="list-group-item fontawesome-icon-list">
+    <dt>
+      <div class="item-icon">
+        <span class="fa-stack fa-1x">
+          <i class="fa fa-circle fa-stack-2x fa-gray"></i> <i class="fa fa-dollar fa-stack-1x"></i><span class="mdname"><%= model_class.human_attribute_name(:title) %>:</span>   
+        </span>    
+      </div>
+    </dt>
+    <dd>
+      <div class="item-content">         
+        <%= @post.title %>         
+      </div> 
+    </dd>
+  </div>
+  <div class="list-group-item fontawesome-icon-list">
+    <dt>
+      <div class="item-icon">
+        <span class="fa-stack fa-1x">
+          <i class="fa fa-circle fa-stack-2x fa-gray"></i> <i class="fa fa-dollar fa-stack-1x"></i><span class="mdname"><%= model_class.human_attribute_name(:body) %>:</span>   
+        </span>    
+      </div>
+    </dt>
+    <dd>
+      <div class="item-content">         
+        <%= @post.body %>         
+      </div> 
+    </dd>
+  </div>
+  <div class="list-group-item fontawesome-icon-list">
+    <dt>
+      <div class="item-icon">
+        <span class="fa-stack fa-1x">
+          <i class="fa fa-circle fa-stack-2x fa-gray"></i> <i class="fa fa-dollar fa-stack-1x"></i><span class="mdname"><%= model_class.human_attribute_name(:published) %>:</span>   
+        </span>    
+      </div>
+    </dt>
+    <dd>
+      <div class="item-content">         
+        <%= @post.published %>         
+      </div> 
+    </dd>
+  </div>
+  <div class="list-group-item fontawesome-icon-list">
+    <dt>
+      <div class="item-icon">
+        <span class="fa-stack fa-1x">
+          <i class="fa fa-circle fa-stack-2x fa-gray"></i> <i class="fa fa-dollar fa-stack-1x"></i><span class="mdname"><%= model_class.human_attribute_name(:categories) %>:</span>   
+        </span>    
+      </div>
+    </dt>
+    <dd>
+      <div class="item-content">         
+        <%= @post.categories %>         
+      </div> 
+    </dd>
+  </div>
+  <div class="list-group-item fontawesome-icon-list">
+    <dt>
+      <div class="item-icon">
+        <span class="fa-stack fa-1x">
+          <i class="fa fa-circle fa-stack-2x fa-gray"></i> <i class="fa fa-dollar fa-stack-1x"></i><span class="mdname"><%= model_class.human_attribute_name(:location) %>:</span>   
+        </span>    
+      </div>
+    </dt>
+    <dd>
+      <div class="item-content">         
+        <%= @post.location %>         
+      </div> 
+    </dd>
+  </div>
+
+  <div class="list-group-item fontawesome-icon-list">
+    <dt>
+      <div class="item-icon">
+        <span class="fa-stack fa-1x">
+          <i class="fa fa-circle fa-stack-2x fa-gray"></i> <i class="fa fa-dollar fa-stack-1x"></i><span class="mdname"><%= model_class.human_attribute_name(:position) %>:</span>   
+        </span>    
+      </div>
+    </dt>
+    <dd>
+      <div class="item-content">         
+        <%= @post.position %>         
+      </div> 
+    </dd>
+  </div>
+  
+  <div class="list-group-item fontawesome-icon-list">
+    <dt>
+      <div class="item-icon">
+        <span class="fa-stack fa-1x">
+          <i class="fa fa-circle fa-stack-2x fa-gray"></i> <i class="fa fa-dollar fa-stack-1x"></i><span class="mdname"><%= model_class.human_attribute_name(:joblevel) %>:</span>   
+        </span>    
+      </div>
+    </dt>
+    <dd>
+      <div class="item-content">         
+        <%= @post.joblevel %>         
+      </div> 
+    </dd>
+  </div>
+
+  <div class="list-group-item fontawesome-icon-list">
+    <dt>
+      <div class="item-icon">
+        <span class="fa-stack fa-1x">
+          <i class="fa fa-circle fa-stack-2x fa-gray"></i> <i class="fa fa-dollar fa-stack-1x"></i><span class="mdname"><%= model_class.human_attribute_name(:salary) %>:</span>   
+        </span>    
+      </div>
+    </dt>
+    <dd>
+      <div class="item-content">         
+        <%= @post.salary %>         
+      </div> 
+    </dd>
+  </div>
+
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
