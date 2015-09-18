@@ -244,8 +244,10 @@ section{
   text-decoration: none;
   color: #666;
 }
-#loginss a{
+#loginbt{
+	display: none;
 }
+
 #loginss a:hover{
 	background-color: #5cb85c;
   text-decoration: none;

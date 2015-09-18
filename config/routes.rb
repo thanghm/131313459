@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'positions/index'
+
   get 'locations/index'
 
   get 'locations/show'
@@ -9,8 +11,8 @@ Rails.application.routes.draw do
   get 'locations/update'
 
   devise_for :users, :controllers => {sessions: 'sessions'}
-    get 'users' => 'posts#index'
-    post 'users.user' => 'posts#index'
+    get 'users' => 'sessions#new'
+    post '/users.user' => 'posts#index'
   
   resources :posts
   
@@ -19,7 +21,7 @@ Rails.application.routes.draw do
 
   
   devise_scope :user do
-    get '/users/sign_out' => 'devise/sessions#destroy'
+    get 'users/sign_out' => 'sessions#destroy'
   end
   
   # The priority is based upon order of creation: first created -> highest priority.

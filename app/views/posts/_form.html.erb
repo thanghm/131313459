@@ -4,12 +4,12 @@
     <div id="error_expl" class="panel panel-danger">
       <div class="panel-heading">
         <h3 class="panel-title"><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h3>
-      </div>
-      <div class="panel-body">
-        <ul>
-        <% @post.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
+          </div>
+            <div class="panel-body">
+              <ul>
+              <% @post.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
         </ul>
       </div>
     </div>
@@ -17,13 +17,13 @@
 
   <div class="form-group">
     <%= f.label :title, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
-      <%= f.text_field :title, :class => 'form-control', :placeholder => "My job" %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= f.label :body, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-10">
+      <div class="col-lg-10">
+        <%= f.text_field :title, :class => 'form-control', :placeholder => "My job" %>
+          </div>
+            </div>
+            <div class="form-group">
+          <%= f.label :body, :class => 'control-label col-lg-2' %>
+        <div class="col-lg-10">
       <%= f.text_area :body, :class => 'form-control', :placeholder => "Awesome body" %>
     </div>
   </div>
@@ -31,33 +31,33 @@
  
   <div class="form-group">    
     <%= f.label :published, :class => 'control-label col-lg-2' %>    
-    <div class="col-lg-4">
-      <%= f.text_field :published, :class => 'form-control', :placeholder => "True or false" %>
-    </div>   
-    <%= f.label :categories, :class => 'control-label col-lg-2' %>    
-    <div class="col-lg-4">
+      <div class="col-lg-4">
+        <%= f.text_field :published, :class => 'form-control', :placeholder => "True or false" %>
+          </div>   
+            <%= f.label :categories, :class => 'control-label col-lg-2' %>    
+          <div class="col-lg-4">
       <%= select_tag :categories, options_from_collection_for_select(Category.all, "categories", "categories", params[:categories]), :class => 'form-control' %>
     </div>
   </div>
 
-
   <div class="form-group">
     <%= f.label :location, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-4">
-      <%= select_tag :location, options_from_collection_for_select(Location.all, "location", "location", params[:location]), :class => 'form-control' %>
-    </div>
-    <%= f.label :position, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-4">
-      <%= f.text_field :position, :class => 'form-control', :placeholder => "Position" %>
+      <div class="col-lg-4">
+        <%= select_tag :location, options_from_collection_for_select(Location.all, "location", "location", params[:location]), :class => 'form-control' %>
+          </div>
+          <%= f.label :position, :class => 'control-label col-lg-2' %>
+        <div class="col-lg-4">
+      <%= select_tag :position, options_from_collection_for_select(Position.all, "position", "position", params[:position]), :class => 'form-control' %>
     </div>
   </div>
+
   <div class="form-group">
-    <%= f.label :joblevel, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-4">
-      <%= f.text_field :joblevel, :class => 'form-control', :placeholder => "staff, manager..." %>
-    </div>
-    <%= f.label :salary, :class => 'control-label col-lg-2' %>
-    <div class="col-lg-4">
+    <%= f.label :skill, :class => 'control-label col-lg-2' %>
+      <div class="col-lg-4">
+        <%= f.text_field :skill, :class => 'form-control', :placeholder => "English, PHP, web ..." %>
+          </div>
+          <%= f.label :salary, :class => 'control-label col-lg-2' %>
+        <div class="col-lg-4">
       <%= f.text_field :salary, :class => 'form-control', :placeholder => "..$" %>
     </div>
   </div>
@@ -65,9 +65,9 @@
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
-      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                posts_path, :class => 'btn btn-default' %>
+        <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+      posts_path, :class => 'btn btn-default' %>
     </div>
   </div>
-
+  
 <% end %>

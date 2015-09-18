@@ -25,6 +25,7 @@ class PostsController < ApplicationController
     @post = Post.new
     @post.categories = params[:categories]
     @post.location = params[:location]
+    @post.position = params[:position]
   end
 
   def edit
@@ -36,6 +37,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.categories = params[:categories]
     @post.location = params[:location]
+    @post.position = params[:position]
     @post.user_id = @user.id
 
     if @post.save
@@ -49,6 +51,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.categories = params[:categories]
     @post.location = params[:location]
+    @post.position = params[:position]
 
     if @post.update(post_params)
       flash[:notice] = "Post was updated."
@@ -75,11 +78,11 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :published, :salary, :user_id, :categories, :location, :position, :joblevel)
+    params.require(:post).permit(:title, :body, :published, :user_id, :categories, :location, :position, :skill, :salary)
   end
 
   def filtering_params(params)
-    params.slice(:title, :salary, :categories, :location)
+    params.slice(:title, :salary, :categories, :location, :position)
   end
 
 end

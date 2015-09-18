@@ -79,5 +79,6 @@
 #topic = Topic.create([{ topic: 'Thoi su' }, { topic: 'The gioi' }, { topic: 'Kinh doanh' }, { topic: 'Giai tri' }, { topic: 'The thao'}, { topic: 'Phap luat'}, { topic: 'Giao duc'}, { topic: 'Suc khoe'}])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 # post = Post.create([{title: 'laman', body: 'chiem', published: true}])
-# categories = Category.create([{categories: 'Police'}, {categories: 'Maketing'}, {categories: 'Accounting'}, {categories: 'Arts/Design'}, {categories: 'Customer Service'}, {categories: 'Food &amp; Beverage'}, {categories: 'Legal/Contracts'}, {categories: 'Internet/Online Media'}, {categories: 'Sales Technical'}])
-location = Location.create([{location: 'Ha Noi'}, {location: 'Ho Chi Minh'}, {location: 'Da Nang'}, {location: 'Daklak'}, {location: 'Vung tau'}])
+categories = Category.create([{categories: 'Police'}, {categories: 'Maketing'}, {categories: 'Accounting'}, {categories: 'Arts/Design'}, {categories: 'Customer Service'}, {categories: 'Food &amp; Beverage'}, {categories: 'Legal/Contracts'}, {categories: 'Internet/Online Media'}, {categories: 'Sales Technical'}, {categories: 'Orther...'}])
+location = Location.create([{location: 'Ha Noi'}, {location: 'Ho Chi Minh'}, {location: 'Da Nang'}, {location: 'Daklak'}, {location: 'Vung tau'},  {location: 'Orther...'}])
+position = Position.create([{position: 'New Grad/Entry Level/Internship'}, {position: 'Experienced (Non-Manager)'}, {position: 'Manager'}, {position: 'Vice Director'}, {position: 'CEO'}, {position: 'Vice President'}, {position: 'President'},{position: 'Orther...'},])
