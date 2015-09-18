@@ -143,12 +143,6 @@ section{
 		background-color: #fff;
 }
 
-.subright{
-	float: right;
-}
-.subright .btn{
-}
-
 .form-group{
 	padding: 15px;
 	height: 100%;
@@ -158,6 +152,10 @@ section{
 	border-radius: 5px;
 	background-color: #333;
 	padding: 5px;
+}
+#search-all{
+	font-size: 12px;
+	float: right;
 }
 .block_search{
 	padding-top: 5px;

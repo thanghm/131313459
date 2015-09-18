@@ -12,7 +12,9 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => {sessions: 'sessions'}
     get 'users' => 'sessions#new'
+    post 'users' => 'sessions#new'
     post '/users.user' => 'posts#index'
+    
   
   resources :posts
   

@@ -95,15 +95,12 @@ $(document).ready(function () {
         $divResponse = $('div#loginbody');
         $divResponse.text('Click to continue!');
         $('button#loginss').hide();
-        $('button#homebt').css("display","inline-block");
+        $('a#homebt').css("display","inline-block");
         $('#loginmodal').modal('hide');
-        $('li.hdlogin').hide();
-        $('li.hdregis').hide();
-        $('li.btn_logout').css("visibility", "visible");
         return alert('Login successful!.');
       } 
       else {
-        return alert('failure!');
+        return alert('Login failure!');
       }
     });
 });
