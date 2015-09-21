@@ -25,4 +25,12 @@ Devise.setup do |config|
 
   config.sign_out_via = :delete
 
+  config.omniauth :google_oauth2, '167718375863-rf9st8ui3lc2tabhrd4pivrfgpbt3nec.apps.googleusercontent.com', '79nyUrasK_gBEL34F6t2BlCW', scope: "email, profile, offline", prompt: "consent", setup: true
+  
+  config.omniauth :instagram, ENV['INSTAGRAM_APP_ID'], ENV['INSTAGRAM_APP_SECRET'], setup: true
+  
+  config.omniauth :facebook, '762663087178332', '09483c5ed2462581594c4e500b3f0f44', scope: "email, public_profile, user_friends, user_birthday, user_location", setup: true
+  
+  config.omniauth :twitter, ENV['TWITTER_APP_ID'], ENV['TWITTER_APP_SECRET'], setup: true
+
 end

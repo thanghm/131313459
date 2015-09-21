@@ -1953,9 +1953,9 @@ i.icon-info{ width:16px; height:16px; display:inline-block; background:url(http:
 .note-box .note-box-body{ padding:5px 15px 0; width:225px; background:url(http://images.vietnamworks.com/gen/note-body-bg.png) repeat-y; display:block; margin-left:auto; margin-right:auto }
 .note-box .note-box-bottom{ background:url(http://images.vietnamworks.com/gen/note-bg.png) no-repeat; background-position:0 -370px; height:65px; width:225px; padding:10px 30px 0; display:block; margin-left:auto; margin-right:auto; margin-top:-15px }
 .no-record{ margin-top:-51px }
-html{ position:relative; min-height:100%; background:#ebebeb }
+html{ position:relative; min-height:100% }
 .no-margin{ margin:0 !important }
-body{ color:#555; background:#ebebeb; margin-bottom:0 }
+body{ color:#555; margin-bottom:0 }
 @media (max-width:991px){
 	body{ margin-bottom:20px }
 }

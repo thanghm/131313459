@@ -1,8 +1,10 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#content {
-	margin: 0 150px 0 150px;
+@media (min-width:578px){
+	#content {
+		margin: 0 150px 0 150px;
+	}
 }
 
 .tabcontrol > .content > .body{
@@ -82,10 +84,17 @@ span.mytext{
 	list-style-type: none;
 }
 
-.tagnav{
-	margin-left: 160px;
-	margin-right: 160px;
+@media (min-width:578px){
+	.tagnav{
+		margin-left: 130px;
+		margin-right: 130px;
+	}
+	thead {
+		width: 100%;
+		max-width: 979px;
+	}
 }
+
 .phone{
 	margin-bottom: -3px;
 }
@@ -176,14 +185,14 @@ section{
 	margin-bottom: 15px;
 }
 #loginmodal .modal-content{
-	width: 500px;
+	
 }
 #loginmodal .modal-header button{
 	margin-right: 15px;
 }
 
 #regiter_ .modal-content{
-	width: 500px;
+
 }
 
 #regiter_ .modal-header button{
