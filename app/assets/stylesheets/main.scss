@@ -5,6 +5,10 @@
 	#content {
 		margin: 0 150px 0 150px;
 	}
+	#tbcenter{
+		width: 100%;
+		max-width: 982px;
+	}
 }
 
 .tabcontrol > .content > .body{
@@ -75,8 +79,6 @@ span.mytext{
 	list-style-type: none;
 	display: inline-block;
 	height: 100%;
-	padding: 0 15px;
-
 }
 
 .block_search_web{
@@ -86,8 +88,8 @@ span.mytext{
 
 @media (min-width:578px){
 	.tagnav{
-		margin-left: 130px;
-		margin-right: 130px;
+		margin-left: 150px;
+		margin-right: 150px;
 	}
 	thead {
 		width: 100%;
