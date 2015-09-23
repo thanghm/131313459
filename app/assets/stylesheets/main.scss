@@ -9,6 +9,18 @@
 		width: 100%;
 		max-width: 982px;
 	}
+	.field{
+		max-width: 400px;
+		width: 100%;
+	}
+	.modal .modal-dialog {
+    width: 30%;
+    max-width: 460px;
+	}
+	.modal .modal-body a {
+		color: blue;
+		font-weight: 700;
+	}
 }
 
 .tabcontrol > .content > .body{
@@ -186,6 +198,11 @@ section{
 #loginmodal .modal-footer .btn{
 	margin-bottom: 15px;
 }
+
+#loginmodal .modal-footer #lgx{
+	margin-right: 12px;
+}
+
 #loginmodal .modal-content{
 	
 }
@@ -207,6 +224,15 @@ section{
 }
 #regiter_ .modal-footer{
 	border-top: 0;
+	padding: 0;
+}
+
+#regiter_ .modal-footer .btn{
+	margin-bottom: 15px;
+}
+
+#regiter_ .modal-footer #rgtx{
+	margin-right: 12px;
 }
 
 #regiter_ .field_with_errors{
@@ -245,14 +271,21 @@ section{
 	height: 110px;
 	resize: vertical;
 }
+
 #homebt{
 	display: none;
 }
+
+#homeuser{
+	display: none;
+}
+
 #homebt a:hover{
   background-color: #428bca;
   text-decoration: none;
   color: #666;
 }
+
 #loginbt{
 	display: none;
 }
