@@ -19,6 +19,9 @@ group :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'pry-rails'
+  gem 'cancan', '>= 1.6'
+  gem 'cancancan', '~> 1.9'
+  gem 'carrierwave', '>= 0.8'
 end
 
 # Use SCSS for stylesheets
@@ -42,7 +45,6 @@ gem 'devise_token_auth'
 gem 'figaro', '1.0'
 gem 'pundit'
 gem 'redcarpet'
-gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 gem 'will_paginate', '~> 3.0.5'
@@ -56,5 +58,6 @@ gem 'twitter'
 gem 'instagram'
 gem 'omniauth-google-oauth2'
 gem 'google-api-client', require: 'google/api_client'
-
-
+gem 'carrierwave-postgresql', require: 'carrierwave/postgresql'
+#gem 'fastercsv' # Only required on Ruby 1.8 and below
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'

@@ -906,7 +906,7 @@ a.thumbnail:hover .caption{ color:#f7941d }
 .navbar{ margin-bottom:0 }
 .btn{ border:1px solid transparent; padding:7.5px 20px; font-size:13px; line-height:1.42857143; border-radius:2px; font-size:14.95px }
 .btn:focus{ outline:0 }
-.btn-default{ color:#555; background-color:#f4f4f4; border-color:#ccc }
+.btn-default{ color:#555; background-color:#fff; border-color:#ccc }
 .btn-default.active, .btn-default:active, .btn-default:focus, .btn-default:hover, .open .dropdown-toggle.btn-default{ color:#555; background-color:#e0e0e0; border-color:#adadad }
 .btn-default.active, .btn-default:active, .open .dropdown-toggle.btn-default{ background-image:none }
 .btn-default.disabled, .btn-default.disabled.active, .btn-default.disabled:active, .btn-default.disabled:focus, .btn-default.disabled:hover, .btn-default[disabled], .btn-default[disabled].active, .btn-default[disabled]:active, .btn-default[disabled]:focus, .btn-default[disabled]:hover, fieldset[disabled] .btn-default, fieldset[disabled] .btn-default.active, fieldset[disabled] .btn-default:active, fieldset[disabled] .btn-default:focus, fieldset[disabled] .btn-default:hover{ background-color:#f4f4f4; border-color:#ccc }

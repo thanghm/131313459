@@ -1,8 +1,9 @@
 $(document).ready(function () {
   $("#loginmodal #new_user").validate({
       rules: {
-        "user[email]": {
-          required: true
+        "user[login]": {
+          required: true,
+          minlength: 4
         },
         "user[password]": {
           required: true,
@@ -10,7 +11,10 @@ $(document).ready(function () {
         }       
       },
       messages: {
-        "user[email]": "Please enter a valid email address",
+        "user[login]": {
+          required: "Please enter a valid username or email",
+          minlength: "Your username must be at least 4 characters long"
+        },
         "user[password]": {
           required: "Please provide a password",
           minlength: "Your password must be at least 5 characters long"
@@ -19,6 +23,10 @@ $(document).ready(function () {
     });
   $("#regiter_ #new_user").validate({
       rules: {
+        "user[username]": {
+          required: true,
+          minlength: 4
+        },
         "user[email]": {
           required: true,
           email: true
@@ -30,10 +38,21 @@ $(document).ready(function () {
         "user[password_confirmation]": {
           required: true,
           minlength: 5
+        },
+        "user[address]": {
+          required: true,
+          minlength: 5
+        },
+        "user[phone]": {
+          required: true,
+          minlength: 5
         }
-
       },
       messages: {
+        "user[username]": {
+          required: "Please provide username",
+          minlength: "Your username must be at least 4 characters long"
+        },
         "user[email]": "Please enter a valid email address",
         "user[password]": {
           required: "Please provide a password",
@@ -42,6 +61,14 @@ $(document).ready(function () {
         "user[password_confirmation]": {
           required: "Please provide a password confirmation",
           minlength: "Your password confirmation must be at least 5 characters long"
+        },
+        "user[address]": {
+          required: "Please provide address",
+          minlength: "Your address must be at least 4 characters long"
+        },
+        "user[phone]": {
+          required: "Please provide phonenumber",
+          minlength: "Your phonenumber must be at least 4 characters long"
         }        
       }
     });
@@ -88,19 +115,64 @@ $(document).ready(function () {
         }   
       }
     });   
+    $("#edituser #edit_user").validate({
+      rules: {
+        "user[username]": {
+          required: true,
+          minlength: 4
+        },
+        "user[email]": {
+          required: true,
+          email: true
+        },
+        "user[password]": {
+          required: true,
+          minlength: 5
+        },
+        "user[password_confirmation]": {
+          required: true,
+          minlength: 5
+        },
+        "user[current_password]": {
+          required: true,
+          minlength: 5
+        },
+        "user[address]": {
+          required: true,
+          minlength: 5
+        },
+        "user[phone]": {
+          required: true,
+          minlength: 5
+        }
 
-    $("form#new_user").on("ajax:success", function(e, data, status, xhr) {
-      
-      if (data.success) {
-        $divResponse = $('div#loginbody');
-        $divResponse.text('Click to continue!');
-        $('button#loginss').hide();
-        $('a#homebt').css("display","inline-block");
-        $('#loginmodal').modal('hide');
-        return alert('Login successful!.');
-      } 
-      else {
-        return alert('Login failure!');
+      },
+      messages: {
+        "user[username]": {
+          required: "Please provide username",
+          minlength: "Your username must be at least 4 characters long"
+        },
+        "user[email]": "Please enter a valid email address",
+        "user[password]": {
+          required: "Please provide a password",
+          minlength: "Your password must be at least 5 characters long"
+        },
+        "user[password_confirmation]": {
+          required: "Please provide a password confirmation",
+          minlength: "Your password confirmation must be at least 5 characters long"
+        },
+        "user[current_password]": {
+          required: "Please provide a current_password",
+          minlength: "Your current_password must be at least 5 characters long"
+        },
+        "user[address]": {
+          required: "Please provide address",
+          minlength: "Your address must be at least 4 characters long"
+        },
+        "user[phone]": {
+          required: "Please provide phonenumber",
+          minlength: "Your phonenumber must be at least 4 characters long"
+        }         
       }
     });
 });

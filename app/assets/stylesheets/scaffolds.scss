@@ -23,11 +23,12 @@ a {
 
   &:visited {
     color: #666;
+    background-color: #fff !important;
   }
 
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color:#f90 !important;
+    background-color: #fff !important;
   }
 }
 

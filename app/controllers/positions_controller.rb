@@ -36,5 +36,4 @@ class PositionsController < ApplicationController
   def position_params
     params.require(:position).permit(:position)
   end
-	end
 end

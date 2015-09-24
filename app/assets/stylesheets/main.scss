@@ -23,6 +23,10 @@
 	}
 }
 
+.dropdown-toggle:hover{
+	background-color: #eee;
+}
+
 .tabcontrol > .content > .body{
 	width: 100%;
 	height: 100%;
@@ -155,15 +159,15 @@ section{
 }
 
 .tabconten{
-		padding-bottom: 5px;
-		font-size: 12px;
+	padding-bottom: 5px;
+	font-size: 12px;
 }
 .tabconten div h2{
-		clear:both;
+	clear:both;
 }
 
 .ttable{
-		background-color: #fff;
+	background-color: #fff;
 }
 
 .form-group{
@@ -250,15 +254,12 @@ section{
 	background-color: #fff;
 }
 
-.btn_logout{
-	
-}
 .btn_logout a:visited{
-	color: black;
+	color: #4285f4;
 }
 .btn_logout a:hover{
 	background-color: #eee;
-	color: #428bca;
+	color: #333;
 	text-decoration: underline; 
 }
 #content .page-header{
@@ -276,21 +277,13 @@ section{
 	display: none;
 }
 
-#homeuser{
-	display: none;
-}
-
 #homebt a:hover{
   background-color: #428bca;
   text-decoration: none;
   color: #666;
 }
 
-#loginbt{
-	display: none;
-}
-
-#loginss a:hover{
+#rgtss a:hover{
 	background-color: #5cb85c;
   text-decoration: none;
   color: #666;

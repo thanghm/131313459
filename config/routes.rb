@@ -1,21 +1,18 @@
 Rails.application.routes.draw do
   
+  devise_for :admins
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'positions/index'
 
   get 'locations/index'
 
-  get 'locations/show'
-
-  get 'locations/edit'
-
-  get 'locations/update'
-
-  devise_for :users, class_name: 'FormUser', :controllers => { omniauth_callbacks: 'omniauth_callbacks', registrations: 'registrations', sessions: 'sessions'}
+  devise_for :users, class_name: 'FormUser', :controllers => { omniauth_callbacks: 'omniauth_callbacks', registrations: 'registrations' }
     get 'users' => 'sessions#new'
     post 'users' => 'sessions#new'
     post '/users.user' => 'posts#index'    
   
-  resources :posts  
+  resources :posts
+
 
   root to: 'posts#index'
 

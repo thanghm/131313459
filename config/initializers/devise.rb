@@ -6,6 +6,10 @@ Devise.setup do |config|
 
  
   require 'devise/orm/active_record'  
+
+  config.authentication_keys = [ :login ]
+
+  config.scoped_views = true
   
   config.case_insensitive_keys = [:email]
 
@@ -29,7 +33,7 @@ Devise.setup do |config|
   
   config.omniauth :instagram, ENV['INSTAGRAM_APP_ID'], ENV['INSTAGRAM_APP_SECRET'], setup: true
   
-  config.omniauth :facebook, '762663087178332', '09483c5ed2462581594c4e500b3f0f44', scope: "email, public_profile, user_friends, user_birthday, user_location", setup: true
+  config.omniauth :facebook, '762663087178332', '09483c5ed2462581594c4e500b3f0f44', scope: "email, public_profile, user_friends, user_birthday, user_location", image_size: "normal", secure_image_url: true, setup: true
   
   config.omniauth :twitter, ENV['TWITTER_APP_ID'], ENV['TWITTER_APP_SECRET'], setup: true
 
