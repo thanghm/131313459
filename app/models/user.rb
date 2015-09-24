@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :authentication_keys => [:login]
 
   attr_accessor :login
-
+  
   has_many :posts
   has_many :identities
 

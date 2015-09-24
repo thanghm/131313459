@@ -4,10 +4,9 @@ RailsAdmin.config do |config|
 
   ## == Devise ==
    config.authenticate_with do
-     warden.authenticate! scope: :admin
-     redirect_to main_app.root_path unless current_admin.is_admin?
-   end
-   config.current_user_method(&:current_admin)
+    authenticate_admin!
+  end
+  config.current_user_method(&:current_admin)
 
   ## == Cancan ==
   # config.authorize_with :cancan, Ability
@@ -17,9 +16,9 @@ RailsAdmin.config do |config|
 
   ## == PaperTrail ==
   # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
-  config.main_app_name = ["Vnwork app", "Admin"]
+  #config.main_app_name = ["Vnwork app", "Admins"]
   # or somethig more dynamic
-  config.main_app_name = Proc.new { |controller| [ "Vnwork app", "Admin - #{controller.params[:action].try(:admin)}" ] }
+  #config.main_app_name = Proc.new { |controller| [ "Vnwork app", "Admins - #{controller.params[:action].try(:titleize)}" ] }
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
 
   config.actions do

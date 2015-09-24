@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
   
   devise_for :admins
+  get 'admins/sign_in' => 'admin/sessions#new'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  get 'positions/index'
-
-  get 'locations/index'
 
   devise_for :users, class_name: 'FormUser', :controllers => { omniauth_callbacks: 'omniauth_callbacks', registrations: 'registrations' }
     get 'users' => 'sessions#new'
@@ -12,7 +10,6 @@ Rails.application.routes.draw do
     post '/users.user' => 'posts#index'    
   
   resources :posts
-
 
   root to: 'posts#index'
 

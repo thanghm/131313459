@@ -61,3 +61,4 @@ gem 'google-api-client', require: 'google/api_client'
 gem 'carrierwave-postgresql', require: 'carrierwave/postgresql'
 #gem 'fastercsv' # Only required on Ruby 1.8 and below
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+gem "will_paginate", "~> 3.0.5"

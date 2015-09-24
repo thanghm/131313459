@@ -11,4 +11,5 @@ class Admin < ActiveRecord::Base
     login = conditions.delete(:login)
     where(conditions).where(["username = :value OR email = :value", { :value => login }]).first
   end 
+
 end
