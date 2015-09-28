@@ -111,6 +111,10 @@ $(document).ready(function () {
     });   
     $("#edituser #edit_user").validate({
       rules: {
+        "user[fullname]": {
+          required: true,
+          minlength: 4
+        },
         "user[username]": {
           required: true,
           minlength: 4
@@ -135,13 +139,17 @@ $(document).ready(function () {
           required: true,
           minlength: 5
         },
-        "user[phone]": {
+        "user[about]": {
           required: true,
           minlength: 5
         }
 
       },
       messages: {
+        "user[fullname]": {
+          required: "Please provide fullname",
+          minlength: "Your fullname must be at least 4 characters long"
+        },
         "user[username]": {
           required: "Please provide username",
           minlength: "Your username must be at least 4 characters long"
@@ -166,6 +174,10 @@ $(document).ready(function () {
         "user[phone]": {
           required: "Please provide phonenumber",
           minlength: "Your phonenumber must be at least 4 characters long"
+        },
+        "user[about]": {
+          required: "Please provide about of you",
+          minlength: "Your about must be at least 4 characters long"
         }         
       }
     });
