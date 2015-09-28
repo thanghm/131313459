@@ -30,10 +30,10 @@
 
  
   <div class="form-group">    
-    <%= f.label :published, :class => 'control-label col-lg-2' %>    
+    <%= f.label :skill, :class => 'control-label col-lg-2' %>
       <div class="col-lg-4">
-        <%= f.text_field :published, :class => 'form-control', :placeholder => "True or false" %>
-          </div>   
+        <%= f.text_field :skill, :class => 'form-control', :placeholder => "English, PHP, web ..." %>
+          </div>       
             <%= f.label :categories, :class => 'control-label col-lg-2' %>    
           <div class="col-lg-4">
       <%= select_tag :categories, options_from_collection_for_select(Category.all, "categories", "categories", params[:categories]), :class => 'form-control' %>
@@ -52,13 +52,20 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :skill, :class => 'control-label col-lg-2' %>
+    <%= f.label :salary, :class => 'control-label col-lg-2' %>    
       <div class="col-lg-4">
-        <%= f.text_field :skill, :class => 'form-control', :placeholder => "English, PHP, web ..." %>
-          </div>
-          <%= f.label :salary, :class => 'control-label col-lg-2' %>
-        <div class="col-lg-4">
-      <%= f.text_field :salary, :class => 'form-control', :placeholder => "..$" %>
+        <%= f.text_field :salary, :class => 'form-control', :placeholder => "..$" %>
+          </div>          
+        <div class="col-lg-4">      
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :published, :class => 'control-label col-lg-2' %>    
+      <div class="col-lg-4">
+        <%= f.check_box :published %> True/False
+          </div>         
+        <div class="col-lg-4">     
     </div>
   </div>
 

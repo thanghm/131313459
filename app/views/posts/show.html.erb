@@ -123,16 +123,21 @@
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
-              posts_path, :class => 'btn btn-default'  %>
+              :back, :class => 'btn btn-default'  %>
+
+<% if cannot? :update, @post %>
+<%= link_to t('.apply', :default => t("helpers.links.apply")),
+              apply_post_path, :class => 'btn btn-primary' %>
+<% end %>
 
 <% if can? :update, @post %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_post_path(@post), :class => 'btn btn-default' %>
+              edit_user_post_path(@user, @post), :class => 'btn btn-default' %>
 <% end %>
 
 <% if can? :destroy, @post %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              post_path(@post),
+              user_post_path(@user, @post),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>

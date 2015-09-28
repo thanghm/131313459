@@ -8,12 +8,19 @@ Rails.application.routes.draw do
 
     get 'users' => 'sessions#new'
     post 'users' => 'sessions#new'
-    post '/users.user' => 'posts#index'    
+    post '/users.user' => 'posts#index'  
+    post '/posts' => 'posts#create'
+    patch '/posts/:id' => 'posts#update'
+    get '/users/allpost' => 'posts#manager_post'
   
   resources :users do
-    resources :posts
+    resources :posts, :only => [:index, :show, :new, :edit, :update, :destroy]
   end
-  resources :posts
+  resources :posts, :only => [:index, :show, :apply] do
+    member do
+      get 'apply'
+    end
+  end
 
   root to: 'posts#index'
 

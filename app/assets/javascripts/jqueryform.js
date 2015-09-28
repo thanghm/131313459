@@ -82,10 +82,7 @@ $(document).ready(function () {
         "post[body]": {
           required: true,
           minlength: 5
-        },
-        "post[published]": {
-          required: true
-        },      
+        },     
         "post[skill]": {
           required: true,
           minlength: 3
@@ -103,9 +100,6 @@ $(document).ready(function () {
         "post[body]": {
           required: "Please provide a body",
           minlength: "Your body must be at least 5 characters long"
-        },
-        "post[published]": {
-          required: "Please provide True or failure"
         },
         "post[skill]":{
           required: "You are hire skill??"

@@ -27,15 +27,14 @@
         <td><%= post.salary %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.view")),
-                      post, :class => 'btn btn-default btn-xs' %>
+                      post, :class => 'btn btn-default btn-xs' %>        
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<% if cannot? :new, @post %>
+
 <%= link_to t('.new', :default => t("helpers.links.new")),
               new_user_post_path(@user, @post),
               :class => 'btn btn-primary' %>
-<% end %>
 
