@@ -1,9 +1,8 @@
 class PostsController < ApplicationController
-  before_filter :authenticate_user!
-  load_and_authorize_resource
+  before_action :authenticate_user!
+
   def show
     @post = Post.find(params[:id])
-    authorize! :read, @post
   end
 
   def index
@@ -11,7 +10,6 @@ class PostsController < ApplicationController
     @posts = Post.where(nil)
     filtering_params(params).each do |key, value|
       @posts = @posts.public_send(key, value) if value.present?
-    authorize! :read, @post
     end
   end
 
@@ -59,6 +57,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     title = @post.title
+
     if @post.destroy
       flash[:notice] = "\"#{title}\" was deleted successfully."
       redirect_to @post

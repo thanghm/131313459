@@ -36,6 +36,12 @@
     <%= f.text_field :phone, :class => 'form-control' %>
   </div>
 
+  <% for roles in Admin::ROLES %>
+    <%= check_box_tag "admin[roles][#{roles}]", roles, @admin.roles.include?(roles), {:name => "admin[roles][]"}%>
+    <%= label_tag "admin_roles_#{roles}", roles.humanize %><br />
+  <% end %>
+  <%= hidden_field_tag "admin[roles][]", "" %>
+
   <div class="field">
     <%= f.file_field :avatar %>
     <%= f.hidden_field :avatar_cache %>

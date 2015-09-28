@@ -214,6 +214,34 @@ section{
 	margin-right: 15px;
 }
 
+
+#lgform .form-group{
+	padding: 0;
+	margin-bottom: 0;
+}
+#lgform .modal-header{
+	padding: 0;
+	border-bottom: 0;
+}
+#lgform .modal-footer{
+	padding: 0;
+	border-top: 0;
+}
+#lgform .modal-footer .btn{
+	margin-bottom: 15px;
+}
+
+#lgform .modal-footer #lgx{
+	margin-right: 12px;
+}
+
+#lgform .modal-content{
+	
+}
+#lgform .modal-header button{
+	margin-right: 15px;
+}
+
 #regiter_ .modal-content{
 
 }
@@ -251,6 +279,46 @@ section{
 }
 
 #regiter_ #error_explanation h2{
+	background-color: #fff;
+}
+
+#rgtsign_up .modal-content{
+
+}
+
+#rgtsign_up .modal-header button{
+	margin-right: 15px;
+}
+
+#rgtsign_up .modal-header{
+	padding: 0;
+	border-bottom: 0;
+}
+#rgtsign_up .modal-footer{
+	border-top: 0;
+	padding: 0;
+}
+
+#rgtsign_up .modal-footer .btn{
+	margin-bottom: 15px;
+}
+
+#rgtsign_up .modal-footer #rgtx{
+	margin-right: 12px;
+}
+
+#rgtsign_up .field_with_errors{
+	padding: 0;
+	background-color: #fff;
+	display: block;
+}
+
+#rgtsign_up #error_explanation{
+	background-color: #fff;
+	border: none;
+}
+
+#rgtsign_up #error_explanation h2{
 	background-color: #fff;
 }
 

@@ -6,7 +6,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :authentication_keys => [:login]
 
   attr_accessor :login
-  
   has_many :posts
   has_many :identities
 
@@ -14,6 +13,25 @@ class User < ActiveRecord::Base
     login = conditions.delete(:login)
     where(conditions).where(["username = :value OR email = :value", { :value => login }]).first
   end  
+
+  def roles=(roles)
+    self.roles_mask = (roles & ROLES).map { |r| 2**ROLES.index(r) }.inject(0, :+)
+  end
+
+  def roles
+    ROLES.reject do |r|
+      ((roles_mask.to_i || 0) & 2**ROLES.index(r)).zero?
+    end
+  end
+
+  ROLES = %w[Find_work Hire_member]
+  def role?(base_role)
+    ROLES.index(base_role.to_s) <= ROLES.index(role)
+  end
+
+  def is?(role)
+    roles.include?(role.to_s)
+  end
 
   def twitter
     identities.where( :provider => "twitter" ).first
