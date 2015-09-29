@@ -1,1 +1,58 @@
-<h1>Apply</h1>
+<%- model_class = Post -%>
+
+  <% if !flash[:notice].blank? %>
+    <div class="alert alert-info">
+    <%= flash[:notice] %>
+    </div>
+  <% end %>
+
+
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Apply for Job</h2>
+        <%= model_class.human_attribute_name(:avatar) %>  
+        <%= image_tag(@user.avatar.medium_avatar)%>
+      </div>
+      
+      <div class="modal-body">
+              
+              <div class="field">
+                <%= model_class.human_attribute_name(:fullname) %>                
+                <%= @user.fullname %>
+              </div>
+              
+              <div class="field">
+                <%= model_class.human_attribute_name(:email) %>                
+                <%= @user.email %>
+              </div>
+
+              <div class="field">               
+                <%= model_class.human_attribute_name(:address) %>
+                <%= @user.address %>
+              </div>  
+
+              <div class="field">                
+                <%= model_class.human_attribute_name(:phone) %>
+                <%= @user.phone %>
+              </div>
+
+              <div class="field">
+                <%= model_class.human_attribute_name(:about) %>                
+                <%= @user.about %>
+              </div>
+
+              <div class="field">
+                
+                <input type="text_area" name="letter", class ='form-control' %>
+               
+              </div>
+
+
+            <%= link_to "Back", root_path, :class => 'btn btn-link' %>
+        </div>
+        <div class="modal-footer">
+        </div>
+    </div>           
+  </div>
+ 

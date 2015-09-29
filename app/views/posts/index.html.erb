@@ -1,4 +1,11 @@
 <%- model_class = Post -%>
+
+<% if !flash[:notice].blank? %>
+  <div class="alert alert-info">
+  <%= flash[:notice] %>
+  </div>
+<% end %>
+
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
@@ -33,6 +40,9 @@
     <% end %>
   </tbody>
 </table>
+<div class="text-center">
+    <ul class="pagination pagination-lg"><li class="active"><a href="#">1</a></li><li><a href="#2">2</a></li><li><a href="#3">3</a></li><li><a href="#4">4</a></li><li><a href="#5">5</a></li><li class="next"><a href="#/page-2">»</a></li></ul>
+</div>
 <% if cannot? :new, @post %>
 <%= link_to t('.new', :default => t("helpers.links.new")),
               new_user_post_path(@user, @post),

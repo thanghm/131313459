@@ -1,5 +1,8 @@
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
-
+<div class="field">
+  <label>Avatar</label><br />
+  <%= image_tag(@admin.avatar.medium_avatar)%>
+</div>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
@@ -50,7 +53,6 @@
   
   <div class="field">
     <%= f.file_field :avatar %>
-    <%= f.hidden_field :avatar_cache %>
   </div> 
 
   <div class="actions">

@@ -1,10 +1,7 @@
 Devise.setup do |config|
   config.http_authenticatable_on_xhr = false
   config.navigational_formats = ["*/*", :html, :json]
- 
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
-
- 
+  
   require 'devise/orm/active_record'  
 
   config.authentication_keys = [ :login ]

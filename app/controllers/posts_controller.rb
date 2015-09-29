@@ -77,6 +77,7 @@ class PostsController < ApplicationController
   end
 
   def apply
+    @user = current_user
   end
 
   def manager_post
