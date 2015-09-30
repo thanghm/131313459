@@ -5,6 +5,6 @@ class Post < ActiveRecord::Base
 	scope :salary, -> (salary) { where("posts.salary ilike ?", "#{salary}%")}
 	scope :location, -> (location) { where("posts.location ilike ?", "#{location}%")}
 	scope :position, -> (position) { where("posts.position ilike ?", "#{position}%")}
-
+	default_scope -> { order(id: :desc) }
 	belongs_to :user
 end

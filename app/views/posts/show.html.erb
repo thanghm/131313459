@@ -36,6 +36,20 @@
     <dt>
       <div class="item-icon">
         <span class="fa-stack fa-1x">
+          <i class="fa fa-circle fa-stack-2x fa-gray"></i> <i class="fa fa-dollar fa-stack-1x"></i><span class="mdname"><%= model_class.human_attribute_name(:created_at) %>:</span>   
+        </span>    
+      </div>
+    </dt>
+    <dd>
+      <div class="item-content">         
+        <%= @post.created_at %>         
+      </div> 
+    </dd>
+  </div>
+  <div class="list-group-item fontawesome-icon-list">
+    <dt>
+      <div class="item-icon">
+        <span class="fa-stack fa-1x">
           <i class="fa fa-circle fa-stack-2x fa-gray"></i> <i class="fa fa-dollar fa-stack-1x"></i><span class="mdname"><%= model_class.human_attribute_name(:published) %>:</span>   
         </span>    
       </div>

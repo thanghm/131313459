@@ -7,8 +7,9 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all.order("id DESC")
+    @posts = Post.all
     @posts = Post.where(nil)
+    @posts = Post.paginate(:page => params[:page], :per_page => 25).order('id DESC')
     @user = current_user
     filtering_params(params).each do |key, value|
       @posts = @posts.public_send(key, value) if value.present?
