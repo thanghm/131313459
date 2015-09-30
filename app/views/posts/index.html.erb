@@ -5,15 +5,21 @@
   <%= flash[:notice] %>
   </div>
 <% end %>
-
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+    <h1><%= @user.fullname %>, Top Jobs For You</h1>
+    <div class="ltnew" style="float:right; margin-top: -40px;">
+    <% if cannot? :new, @post %>
+      <%= link_to t('.new', :default => t("helpers.links.new")),
+                    new_user_post_path(@user, @post),
+                    :class => 'btn btn-primary' %>
+    <% end %>
+    </div>
 </div>
 <table class="table table-striped" id="tbcenter">
   <thead>
     <tr>
+      <th style="text-align: center;">#</th>
       <th><%= model_class.human_attribute_name(:title) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%= model_class.human_attribute_name(:categories) %></th>
       <th><%= model_class.human_attribute_name(:location) %></th>
       <th><%= model_class.human_attribute_name(:position) %></th>
@@ -23,10 +29,14 @@
     </tr>
   </thead>
   <tbody>
-    <% @posts.each do |post| %>
+    <% @posts.each_with_index  do |post, index| %>
       <tr>
+        <% if (@pass_item+index < 5) %>
+        <td><span class="score"><span class="label label-danger">New</span></span></td>
+        <% else %>
+        <td style="text-align: center;"><%= @pass_item+index+1 %></td>
+        <% end %>
         <td style="color:#00b9f2; font-size: 14px;"><%= post.title %></td>
-        <td><%= post.created_at %></td>
         <td><%= post.categories %></td>
         <td><%= post.location %></td>
         <td><%= post.position %></td>
@@ -40,12 +50,9 @@
     <% end %>
   </tbody>
 </table>
-<div class="text-center">
-    <ul class="pagination pagination-lg"><li class="active"><a href="#">1</a></li><li><a href="#2">2</a></li><li><a href="#3">3</a></li><li><a href="#4">4</a></li><li><a href="#5">5</a></li><li class="next"><a href="#/page-2">»</a></li></ul>
+
+<div class="apple_pagination">
+  <%= will_paginate @posts, :remote => true %>
 </div>
-<% if cannot? :new, @post %>
-<%= link_to t('.new', :default => t("helpers.links.new")),
-              new_user_post_path(@user, @post),
-              :class => 'btn btn-primary' %>
-<% end %>
+
 

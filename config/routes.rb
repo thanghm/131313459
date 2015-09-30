@@ -12,8 +12,8 @@ Rails.application.routes.draw do
     post '/posts' => 'posts#create'
     patch '/posts/:id' => 'posts#update'
     get '/users/allpost' => 'posts#manager_post'
-    get 'posts/page/:page' => 'posts#index'
-  
+    get 'posts/index/:page' => 'posts#index'
+   
   resources :users do
     resources :posts, :only => [:index, :show, :new, :edit, :update, :destroy]
   end
