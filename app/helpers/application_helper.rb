@@ -19,4 +19,12 @@ module ApplicationHelper
     return user.roles.include?(admin_role)
   end
 
+  def page_header(text)
+    content_for(:page_header) { text.to_s }
+  end
+
+  def gravatar_for(user, size = 30, title = user.fullname)
+    image_tag gravatar_image_url(user.email, size: size), title: title, class: 'img-rounded'
+  end
+
 end

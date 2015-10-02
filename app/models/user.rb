@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   devise :omniauthable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :authentication_keys => [:login]
 
+  acts_as_messageable
+
   attr_accessor :login
   has_many :posts
   has_many :identities
@@ -12,6 +14,10 @@ class User < ActiveRecord::Base
   def self.find_for_authentication(conditions)
     login = conditions.delete(:login)
     where(conditions).where(["username = :value OR email = :value", { :value => login }]).first
+  end
+
+  def mailboxer_email(object)
+    email
   end  
 
   def roles=(roles)

@@ -1,6 +1,7 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 @media (min-width:578px){
 	#content {
 		margin: 0 150px 0 150px;
@@ -18,9 +19,34 @@
     max-width: 460px;
 	}
 	.modal .modal-body a {
-		color: blue;
+		color: #00b9f2;
 		font-weight: 700;
 	}
+}
+
+@media all {
+	#search-form{
+.col-xs-2, 
+.col-xs-4, 
+.col-xs-6, 
+.col-xs-8, 
+.col-xs-12, {
+	padding-left: 5px; 
+	padding-right: 5px;}
+	}
+}
+
+#recipients {
+	display: block;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{color: #f7941d !important;}
+
+.messages {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 #post_published {
@@ -396,3 +422,32 @@ body #dlhrz{
     color: black; }
     .apple_pagination a:hover, .apple_pagination a:focus {
       text-decoration: underline; }
+
+.hidden { display: none; }
+.alert-error {
+background-color: #f2dede;
+border-color: #eed3d7;
+color: #b94a48;
+text-align: left;
+}
+
+.alert-alert {
+background-color: #f2dede;
+border-color: #eed3d7;
+color: #b94a48;
+text-align: left;
+}
+
+.alert-success {
+background-color: #dff0d8;
+border-color: #d6e9c6;
+color: #468847;
+text-align: left;
+}
+
+.alert-notice {
+background-color: #dff0d8;
+border-color: #d6e9c6;
+color: #468847;
+text-align: left;
+}

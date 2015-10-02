@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.turbolinks
+//= require chosen-jquery
 //= require twitter/bootstrap
 //= require jquery.validate
 //= require jquery.validate.additional-methods

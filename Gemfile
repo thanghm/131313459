@@ -33,6 +33,13 @@ gem 'jbuilder', '~> 2.0'
 gem 'turbolinks'
 gem 'jquery-validation-rails'
 gem 'twitter-bootstrap-for-rails'
+gem 'jquery-turbolinks'
+gem 'bootstrap-sass'
+gem 'bootstrap-chosen-rails'
+gem "compass-rails", '~> 2.0.4'
+gem 'sprockets', '~> 2.12.3'
+gem 'sprockets-rails', '~>  2.2.4'
+
 
 
 group :doc do
@@ -47,7 +54,6 @@ gem 'pundit'
 gem 'redcarpet'
 gem 'mini_magick'
 gem 'fog'
-gem 'will_paginate', '~> 3.0.5'
 gem 'embedly'
 gem 'autoprefixer-rails'
 gem 'omniauth'
@@ -59,6 +65,8 @@ gem 'instagram'
 gem 'omniauth-google-oauth2'
 gem 'google-api-client', require: 'google/api_client'
 gem 'carrierwave-postgresql', require: 'carrierwave/postgresql'
-#gem 'fastercsv' # Only required on Ruby 1.8 and below
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 gem "will_paginate", "~> 3.0.5"
+gem "mailboxer"
+gem 'chosen-rails'
+gem 'gravatar_image_tag'

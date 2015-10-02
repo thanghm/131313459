@@ -10,12 +10,10 @@ class AvatarUploader < CarrierWave::Uploader::Base
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
-
   # For Cache location
   # def cache_dir
   # "/tmp/your-folder-cache"
   # end
-
   # def default_url
     # For Rails 3.1+ asset pipeline compatibility:
     # ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
@@ -23,12 +21,6 @@ class AvatarUploader < CarrierWave::Uploader::Base
     #{}"/images/fallback/" + [version_name, "default.png"].compact.join('_')
     # 'default_avatar.png' #rails will look at 'app/assets/images/default_avatar.png'
   # end
-
-   # Create different versions of your uploaded files:
-  version :large_avatar do
-    # returns a 150x150 image
-    process :resize_to_fill => [150, 150]
-  end
   version :medium_avatar do
     # returns a 50x50 image
     process :resize_to_fill => [50, 50]
@@ -40,6 +32,6 @@ class AvatarUploader < CarrierWave::Uploader::Base
    
   # Only allows jpg, jpeg, or png
   def extension_white_list
-  %w(jpg jpeg png pdf doc htm html docx)
+  %w(jpg jpeg png)
   end
 end

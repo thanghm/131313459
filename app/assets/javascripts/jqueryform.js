@@ -72,43 +72,50 @@ $(document).ready(function () {
       }        
     }
   });
-
-  $("form#new_post").validate({
-    rules: {
-      "post[title]": {
-        required: true,
-        minlength: 5
-      },
-      "post[body]": {
-        required: true,
-        minlength: 5
-      },     
-      "post[skill]": {
-        required: true,
-        minlength: 3
-      },
-      "post[salary]": {
-        required: true         
-      }
-
-    },
-    messages: {
-      "post[title]": {
-        required: "Please enter a title",
-        minlength: "Your title must be at least 5 characters long"
-      },
-      "post[body]": {
-        required: "Please provide a body",
-        minlength: "Your body must be at least 5 characters long"
-      },
-      "post[skill]":{
-        required: "You are hire skill??"
-      },
-      "post[salary]": {
-        required: "Enter salary or ..."     
-      }   
-    }
-  });   
+  $("#new_post").validate({
+        rules: {
+          "post[title]": {
+            required: true,
+            minlength: 5
+          },
+          "post[body]": {
+            required: true,
+            minlength: 5
+          },     
+          "post[skill]": {
+            required: true,
+            minlength: 3
+          },
+          "post[phone]": {
+            required: true,
+            minlength: 5
+          },
+          "post[salary]": {
+            required: true
+          }         
+        },
+        messages: {
+          "post[title]": {
+            required: "Please enter a title",
+            minlength: "Your title must be at least 5 characters long"
+          },
+          "post[body]": {
+            required: "Please provide a body",
+            minlength: "Your body must be at least 5 characters long"
+          },
+          "post[skill]":{
+            required: "You are hire skill??",
+            minlength: "Your body must be at least 3 characters long"
+          },
+          "post[phone]":{
+            required: "Please enter a phone number",
+            minlength: "Your body must be at least 5 characters long"
+          },
+          "post[salary]": {
+            required: "Enter salary or ..."     
+          }   
+        }
+    });
   $("#edituser #edit_user").validate({
     rules: {
       "user[fullname]": {
@@ -181,5 +188,24 @@ $(document).ready(function () {
       }         
     }
   });
-
+  $("#newmess").validate({
+    rules: {
+      "message[subject]": {
+        required: true
+      },
+      "message[body]": {
+        required: true,
+        minlength: 5
+      }       
+    },
+    messages: {
+      "message[subject]": {
+        required: "Please enter a valid subject"
+      },
+      "message[body]": {
+        required: "Please provide a message",
+        minlength: "Your message must be at least 5 characters long"
+      }        
+    }
+  });
 });

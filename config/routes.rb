@@ -13,6 +13,21 @@ Rails.application.routes.draw do
     patch '/posts/:id' => 'posts#update'
     get '/users/allpost' => 'posts#manager_post'
     get 'posts/index/:page' => 'posts#index'
+
+  resources :conversations, only: [:index, :show, :destroy] do
+    member do
+      post :reply
+      post :restore
+      post :mark_as_read
+    end
+    collection do
+      delete :empty_trash
+    end
+  end
+
+  resources :users, only: [:index]
+  
+  resources :messages, only: [:new, :create]
    
   resources :users do
     resources :posts, :only => [:index, :show, :new, :edit, :update, :destroy]

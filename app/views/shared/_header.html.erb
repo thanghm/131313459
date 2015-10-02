@@ -3,9 +3,6 @@
     <li>
     	<img class="phone" src="http://st.f1.vnecdn.net/myvne/images/icons/hotline_transparent.png" alt="">
     		<b> 0125.125.1325</b> (HN) - <b>0101.001.0001</b> (TP HCM)
-    </li>
-    <li>
-			<iframe src="//www.facebook.com/plugins/like.php?locale=en_US&amp;href=https://www.facebook.com/congdongvnexpress&amp;width&amp;layout=button&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=21&amp;appId=283547481836738" scrolling="no" frameborder="0" style="border:none; margin-bottom:-7px; overflow:hidden; height:21px; width:55px;" allowtransparency="true"></iframe>
     </li>  
 	  <div class="loginform">
 	    <li class="btn_logout">
@@ -20,6 +17,8 @@
 			        <li><%= link_to "Home page", root_path %></li></br>
 			        <li role="separator" class="divider"></li>
 			        <li><%= link_to "Manager post", users_allpost_path %></li></br>
+			        <li role="separator" class="divider"></li>
+			        <li><%= link_to 'Your Conversations', conversations_path %></li>
 			        <li role="separator" class="divider"></li>
 			        <li>
 			          <%= link_to "Logout", destroy_user_session_path, :method => :delete %>

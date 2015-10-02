@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-
   load_and_authorize_resource
+  
   def show
     @post = Post.find(params[:id])
     @user = current_user
@@ -29,6 +29,8 @@ class PostsController < ApplicationController
     @post.location = params[:location]
     @post.position = params[:position]
     @post.user_id = current_user.id
+    @post.logo = current_user.avatar
+    @post.about = current_user.about
   end
 
   def edit
@@ -44,6 +46,8 @@ class PostsController < ApplicationController
     @post.location = params[:location]
     @post.position = params[:position]
     @post.user_id = current_user.id
+    @post.logo = current_user.avatar
+    @post.about = current_user.about
 
     if @post.save
       redirect_to [@post]
@@ -59,6 +63,8 @@ class PostsController < ApplicationController
     @post.location = params[:location]
     @post.position = params[:position]
     @post.user_id = current_user.id
+    @post.logo = current_user.avatar
+    @post.about = current_user.about
 
     if @post.update(post_params)
       flash[:notice] = "Post was updated."
@@ -95,7 +101,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :published, :user_id, :categories, :location, :position, :skill, :salary)
+    params.require(:post).permit(:title, :body, :published, :user_id, :categories, :location, :position, :skill, :phone, :map, :logo, :about, :salary)
   end
 
   def filtering_params(params)

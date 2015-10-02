@@ -1,7 +1,26 @@
 <%- model_class = Post -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
-</div>
+<dl class="dl-horizontal" id="dhheader">
+  <div class="list-group-item fontawesome-icon-list">
+    <div class="clearfix" style="text-align:center;">
+      <h1>Map</h1>
+      <%= image_tag(@post.map.lg_map)%>
+    </div>
+  </div>
+</dl>
+
+<dl class="dl-horizontal" id="dhabout">
+  <div class="list-group-item fontawesome-icon-list">
+    <dt>
+      <% posts_user = @post.user%>
+      <%= image_tag(@post.logo) %>
+    </dt>
+    <dd>
+      <div class="item-content">         
+        <%= @post.about %>
+      </div> 
+    </dd>
+  </div>
+</dl>
 
 <dl class="dl-horizontal" id="dlhrz">
   <div class="list-group-item fontawesome-icon-list">
@@ -115,6 +134,21 @@
     <dd>
       <div class="item-content">         
         <%= @post.skill %>         
+      </div> 
+    </dd>
+  </div>
+
+  <div class="list-group-item fontawesome-icon-list">
+    <dt>
+      <div class="item-icon">
+        <span class="fa-stack fa-1x">
+          <i class="fa fa-circle fa-stack-2x fa-gray"></i> <i class="fa fa-dollar fa-stack-1x"></i><span class="mdname"><%= model_class.human_attribute_name(:phone) %>:</span>   
+        </span>    
+      </div>
+    </dt>
+    <dd>
+      <div class="item-content">         
+        <%= @post.phone %>         
       </div> 
     </dd>
   </div>

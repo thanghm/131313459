@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-	
+	mount_uploader :map, MapUploader
 	scope :title, -> (title) { where("posts.title ilike ?", "#{title}%")}
 	scope :categories, -> (categories) { where("posts.categories ilike ?", "#{categories}%")}
 	scope :salary, -> (salary) { where("posts.salary ilike ?", "#{salary}%")}
