@@ -91,6 +91,8 @@ class PostsController < ApplicationController
 
   def apply
     @user = current_user
+    @post = Post.find(params[:id])
+    @recipients = User.find_by(:id => @post.user_id)
   end
 
   def manager_post
@@ -101,7 +103,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :published, :user_id, :categories, :location, :position, :skill, :phone, :map, :logo, :about, :salary)
+    params.require(:post).permit(:title,:company, :body, :published, :user_id, :categories, :location, :position, :skill, :phone, :map, :logo, :about, :salary)
   end
 
   def filtering_params(params)

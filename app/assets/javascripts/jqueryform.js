@@ -90,6 +90,9 @@ $(document).ready(function () {
             required: true,
             minlength: 5
           },
+          "post[company]": {
+            required: true
+          },
           "post[salary]": {
             required: true
           }         
@@ -110,6 +113,9 @@ $(document).ready(function () {
           "post[phone]":{
             required: "Please enter a phone number",
             minlength: "Your body must be at least 5 characters long"
+          },
+          "post[company]":{
+            required: "Please enter your company"
           },
           "post[salary]": {
             required: "Enter salary or ..."     
@@ -142,13 +148,21 @@ $(document).ready(function () {
         required: true,
         minlength: 5
       },
+      "user[categories]": {
+        required: true,
+        minlength: 4
+      },
       "user[address]": {
         required: true,
-        minlength: 5
+        minlength: 4
+      },
+      "user[phone]": {
+        required: true,
+        minlength: 4
       },
       "user[about]": {
         required: true,
-        minlength: 5
+        minlength: 4
       }
 
     },
@@ -173,6 +187,10 @@ $(document).ready(function () {
       "user[current_password]": {
         required: "Please provide a current_password",
         minlength: "Your current_password must be at least 5 characters long"
+      },
+      "user[categories]": {
+        required: "Please provide categories",
+        minlength: "Your categories must be at least 4 characters long"
       },
       "user[address]": {
         required: "Please provide address",

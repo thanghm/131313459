@@ -34,10 +34,14 @@
 	padding-left: 5px; 
 	padding-right: 5px;}
 	}
-}
-
-#recipients {
-	display: block;
+	#apply-form1 label{
+		text-align: right;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	#apply-form1 img{
+		float: right;
+	}
 }
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{color: #f7941d !important;}
@@ -393,7 +397,9 @@ section{
 body #dlhrz{
 	font-size: 14px;
 }
-
+#dhabout img{
+	float:left;
+}
 
 .apple_pagination {
   background: #f1f1f1;

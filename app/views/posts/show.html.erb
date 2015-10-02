@@ -12,10 +12,11 @@
   <div class="list-group-item fontawesome-icon-list">
     <dt>
       <% posts_user = @post.user%>
-      <%= image_tag(@post.logo) %>
+      <%= image_tag(@post.logo, :size => "100x120") %>
     </dt>
     <dd>
-      <div class="item-content">         
+      <div class="item-content">
+        <b><%= @post.company %> Company</b></br>         
         <%= @post.about %>
       </div> 
     </dd>
@@ -149,6 +150,21 @@
     <dd>
       <div class="item-content">         
         <%= @post.phone %>         
+      </div> 
+    </dd>
+  </div>
+
+  <div class="list-group-item fontawesome-icon-list">
+    <dt>
+      <div class="item-icon">
+        <span class="fa-stack fa-1x">
+          <i class="fa fa-circle fa-stack-2x fa-gray"></i> <i class="fa fa-dollar fa-stack-1x"></i><span class="mdname"><%= model_class.human_attribute_name(:company) %>:</span>   
+        </span>    
+      </div>
+    </dt>
+    <dd>
+      <div class="item-content">         
+        <%= @post.company %>         
       </div> 
     </dd>
   </div>

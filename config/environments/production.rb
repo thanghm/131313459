@@ -26,4 +26,15 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  config.action_mailer.delivery_method = :smtp
+  # SMTP settings for mailgun
+  ActionMailer::Base.smtp_settings = {
+    :port           => 587,
+    :address        => "smtp.mailgun.org",
+    :domain         => 'sandboxf507c6cf467a40e2ad0cb97a001b59ce.mailgun.org',
+    :user_name      => 'postmaster@sandboxf507c6cf467a40e2ad0cb97a001b59ce.mailgun.org',
+    :password       => '1edf6671acc49b95c208a21921955b89 '
+    :authentication => :plain,
+  }}
 end

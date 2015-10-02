@@ -1,3 +1,8 @@
+<% if !flash[:notice].blank? %>
+  <div class="alert alert-info">
+  <%= flash[:notice] %>
+  </div>
+<% end %>
 <div id="edituser">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -9,7 +14,7 @@
           </div>
       </div>
       <div class="modal-body">
-          <%= form_for(resource, as: resource_name, url: registration_path(resource_name),:validate => true, remote: true, html: { method: :put }) do |f| %>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
 
               <div class="field">
                 <%= f.file_field :avatar %>
@@ -48,6 +53,11 @@
                 <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
                 <%= f.password_field :current_password, autocomplete: "off", :class => 'form-control' %>
               </div>
+
+              <div class="field">
+                <%= f.label :categories %><br />
+                <%= f.text_field :categories, :class => 'form-control', :placeholder => 'Enter categories..' %>
+              </div> 
 
               <div class="field">
                 <%= f.label :address %><br />
