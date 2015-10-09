@@ -1,6 +1,7 @@
 Devise.setup do |config|
   config.http_authenticatable_on_xhr = false
   config.navigational_formats = ["*/*", :html, :json]
+  config.mailer_sender = "'MySite' <no-reply@mysite.com>"
   
   require 'devise/orm/active_record'  
 

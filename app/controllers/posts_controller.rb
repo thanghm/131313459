@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @user = current_user
+    @resume = Resume.find_by(user_id: @user.id)
   end
 
   def index
@@ -48,11 +49,14 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
     @post.logo = current_user.avatar
     @post.about = current_user.about
-
-    if @post.save
-      redirect_to [@post]
-    else
-      render :new
+    @user_email= User.where(skill: @post.skill, roles_mask: 1).pluck(:email)
+    respond_to do |format|
+      if @post.save
+        AppMailer.email_name(@post, @user_email).deliver
+        format.html { redirect_to [@post], notice: 'New job was successfully created.' }
+      else
+        format.html { render :new }
+      end
     end
   end
   
@@ -87,12 +91,6 @@ class PostsController < ApplicationController
       flash[:error] = "There was an error deleting the post."
       render :index
     end
-  end
-
-  def apply
-    @user = current_user
-    @post = Post.find(params[:id])
-    @recipients = User.find_by(:id => @post.user_id)
   end
 
   def manager_post

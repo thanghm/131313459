@@ -25,16 +25,21 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: [:index]
+  resources :users, only: [:index] do 
+    resources :resumes
+  end
+  resources :resumes
+  
   
   resources :messages, only: [:new, :create]
    
   resources :users do
-    resources :posts, :only => [:index, :show, :new, :edit, :update, :destroy]
+    resources :posts, only: [:index, :show, :new, :edit, :update, :destroy]
   end
   resources :posts, :only => [:index, :show, :apply] do
-    member do
+    resources :resumes, only: [:apply, :applyto] do
       get 'apply'
+      post 'applyto'
     end
   end
 

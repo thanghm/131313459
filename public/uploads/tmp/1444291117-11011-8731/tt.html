@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Demo GetSelectOptionData</title>
+</head>
+<body>
+    <form name="check_letter_frm" action="#">
+
+Enter a letter: </label><input type="text" name="check_letter" size="1">
+
+<input type="button" name="matching_word" value="Select matching Word" onclick="set_matching_word(this.form.letters, this.form.check_letter);">
+
+Matching Word: <select name="letters">
+
+<option></option>
+<option value="a">apple</option>
+<option value="b">banana</option>
+<option value="c">carrot</option>
+<option value="d">daisy</option>
+<option value="e">elephant</option>
+<option value="f">fox</option>
+
+...
+
+<option value="z">zoo</option>
+
+</select>
+</form>
+
+
+    <script>
+    function set_matching_word(selectObj, txtObj)
+        {
+           var letter = txtObj.value;
+           for(var i = 0; i < selectObj.length; i++)
+           {
+              if(selectObj.options[i].value == letter)
+              selectObj.selectedIndex = i;
+           }
+        }
+     </script>
+</body>
+</html>

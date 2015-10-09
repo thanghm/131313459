@@ -1,38 +1,43 @@
 <div id="header">
 	<div class="tagnav">
-    <li>
-    	<img class="phone" src="http://st.f1.vnecdn.net/myvne/images/icons/hotline_transparent.png" alt="">
+	<ul class="nav nav-tabs">
+    <li class="phonebtn">
+    	<%= image_tag("phone-icon.png")%>
     		<b> 0125.125.1325</b> (HN) - <b>0101.001.0001</b> (TP HCM)
-    </li>  
-	  <div class="loginform">
-	    <li class="btn_logout">
-	    	<% if user_signed_in? %>
-	    	 <li id="fat-menu" class="dropdown">
-			      <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-			        Account <b class="caret"></b>
-			      </a>
-			      <ul class="dropdown-menu">
-			        <li><%= link_to "Profile", edit_user_registration_path %></li></br>
-			        <li role="separator" class="divider"></li>
-			        <li><%= link_to "Home page", root_path %></li></br>
-			        <li role="separator" class="divider"></li>
-			        <li><%= link_to "Manager post", users_allpost_path %></li></br>
-			        <li role="separator" class="divider"></li>
-			        <li><%= link_to 'Your Conversations', conversations_path %></li>
-			        <li role="separator" class="divider"></li>
-			        <li>
-			          <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
-			        </li>
-			      </ul>
-			    </li>
-				<% else %>
-				  <li>
-				  	<a id="loginss" class="btn btn-default" data-toggle="modal" data-target="#loginmodal" >
-	           	Login
-	          </a>
-				  </li>
-				<% end %>
-	    </li>	   
-	  </div>
+    </li>
+  	<li class="btn_logout">
+  	
+	    <% if user_signed_in? %>
+	    	<li id="fat-menu" class="dropdown">
+		      <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+		        Account <b class="caret"></b>
+		      </a>
+		      <ul class="dropdown-menu">
+		        <li><%= link_to "Profile", edit_user_registration_path %></li></br>
+		        <li role="separator" class="divider"></li>
+		        <li><%= link_to "Resume", resumes_path %></li></br>
+		        <li role="separator" class="divider"></li>
+		        <li><%= link_to "Home page", root_path %></li></br>
+		        <li role="separator" class="divider"></li>
+		       
+		        <li><%= link_to "Manager post", users_allpost_path %></li></br>
+		        <li role="separator" class="divider"></li>	       
+		       
+		        <li><%= link_to 'Your Conversations', conversations_path %></li>
+		        <li role="separator" class="divider"></li>
+		        <li>
+		          <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+		        </li>
+		      </ul>
+		    </li>
+			<% else %>
+			  <li id="login-btn">
+			  	<a id="logins1" class="btn btn-default" data-toggle="modal" data-target="#loginmodal">
+           	Login
+          </a>
+			  </li>
+			<% end %>
+			</ul>
+		</li>  
   </div>
 </div>

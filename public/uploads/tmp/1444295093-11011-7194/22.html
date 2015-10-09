@@ -1,0 +1,37 @@
+<dl class="dropdown"> 
+  
+    <dt>
+    <a href="#">
+      <span class="hida">Select</span>    
+      <p class="multiSel"></p>  
+    </a>
+    </dt>
+  
+    <dd>
+        <div class="mutliSelect">
+            <ul>
+                <li>
+                  <select>
+                  <option value="Apple" >Apple</option>
+                  <option value="Apple" >Blackberry</option>
+                  <option value="Apple" >HTC</option>
+                  <option value="Apple" >Sony Ericson</option> </br>
+                  <%= select_tag "seek_funding", options_for_select([ "Federal", " Foundation", "Corporate", "Individual", "All of the above" ], params["seek_funding"]) %>
+                </li>
+             
+                  
+                <li>
+                    <input type="checkbox" value="Blackberry" />Blackberry</li>
+                <li>
+                    <input type="checkbox" value="HTC" />HTC</li>
+                <li>
+                    <input type="checkbox" value="Sony Ericson" />Sony Ericson</li>
+                <li>
+                    <input type="checkbox" value="Motorola" />Motorola</li>
+                <li>
+                    <input type="checkbox" value="Nokia" />Nokia</li>
+            </ul>
+        </div>
+    </dd>
+  <button>Filter</button>
+</dl>

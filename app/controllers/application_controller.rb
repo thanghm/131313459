@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   end
 
   rescue_from ActiveRecord::RecordNotFound do
-    flash[:warning] = 'Resource not found.'
+    flash[:notice] = 'Resource not found.'
     redirect_back_or root_path
   end
 
@@ -20,6 +20,6 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :email, :password, :password_confirmation, :remember_me, :address, :phone, :avatar, roles: []) }
     devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :username, :email, :password, :remember_me) }
-    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username, :categories, :fullname, :about, :letter, :email, :password, :password_confirmation, :address, :phone, :current_password, :avatar, roles: []) }
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username, :skill, :fullname, :about, :letter, :email, :password, :password_confirmation, :address, :phone, :current_password, :avatar, roles: []) }
   end
 end

@@ -14,11 +14,12 @@ Rails.application.configure do
 
   config.action_controller.allow_forgery_protection = false
 
-  config.action_mailer.delivery_method = :test
+  config.action_mailer.delivery_method = :smtp
 
   config.active_support.test_order = :random
 
   config.active_support.deprecation = :stderr
   # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  
 end

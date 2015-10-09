@@ -5,12 +5,16 @@ gem 'rails', '4.2.3'
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+  gem 'mandrill_mailer'
 end
 
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'awesome_print'
 end
 
 group :test do
@@ -70,3 +74,5 @@ gem "will_paginate", "~> 3.0.5"
 gem "mailboxer"
 gem 'chosen-rails'
 gem 'gravatar_image_tag'
+gem 'mail', require: 'mail'
+

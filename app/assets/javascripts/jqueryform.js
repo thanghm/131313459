@@ -83,8 +83,7 @@ $(document).ready(function () {
             minlength: 5
           },     
           "post[skill]": {
-            required: true,
-            minlength: 3
+            required: true
           },
           "post[phone]": {
             required: true,
@@ -107,8 +106,7 @@ $(document).ready(function () {
             minlength: "Your body must be at least 5 characters long"
           },
           "post[skill]":{
-            required: "You are hire skill??",
-            minlength: "Your body must be at least 3 characters long"
+            required: "You are hire skill??"
           },
           "post[phone]":{
             required: "Please enter a phone number",
@@ -118,7 +116,7 @@ $(document).ready(function () {
             required: "Please enter your company"
           },
           "post[salary]": {
-            required: "Enter salary or ..."     
+            required: "Enter salary ??"     
           }   
         }
     });
@@ -149,8 +147,7 @@ $(document).ready(function () {
         minlength: 5
       },
       "user[categories]": {
-        required: true,
-        minlength: 4
+        required: true
       },
       "user[address]": {
         required: true,
@@ -189,8 +186,7 @@ $(document).ready(function () {
         minlength: "Your current_password must be at least 5 characters long"
       },
       "user[categories]": {
-        required: "Please provide categories",
-        minlength: "Your categories must be at least 4 characters long"
+        required: "Please provide categories"
       },
       "user[address]": {
         required: "Please provide address",
@@ -224,6 +220,34 @@ $(document).ready(function () {
         required: "Please provide a message",
         minlength: "Your message must be at least 5 characters long"
       }        
+    }
+  });
+  $("#new_resume").validate({
+    rules: {
+      "resume[letter]": {
+        required: true,
+        minlength: 4
+      }    
+    },
+    messages: {
+      "resume[letter]": {
+        required: "Please enter a valid letter",
+        minlength: "Your letter must be at least 4 characters long"
+      }       
+    }
+  });
+  $(".edit_resume").validate({
+    rules: {
+      "resume[letter]": {
+        required: true,
+        minlength: 4
+      }    
+    },
+    messages: {
+      "resume[letter]": {
+        required: "Please enter a valid letter",
+        minlength: "Your letter must be at least 4 characters long"
+      }       
     }
   });
 });

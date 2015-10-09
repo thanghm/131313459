@@ -6,6 +6,8 @@ require "active_record/railtie"
 require "action_controller/railtie"
 require "action_mailer/railtie"
 require "sprockets/railtie"
+require "mandrill_mailer"
+require 'mail'
 if defined?(Bundler)
   # Bundler stuff
 end
@@ -13,7 +15,7 @@ end
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Vnexpress
+module Vnwork
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

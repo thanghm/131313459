@@ -1,9 +1,18 @@
 <%- model_class = Post -%>
+
+<% if !flash[:notice].blank? %>
+  <div class="alert alert-info">
+  <%= flash[:notice] %>
+  </div>
+<% end %>
+
 <dl class="dl-horizontal" id="dhheader">
   <div class="list-group-item fontawesome-icon-list">
     <div class="clearfix" style="text-align:center;">
       <h1>Map</h1>
-      <%= image_tag(@post.map.lg_map)%>
+        <div id="img-map">
+          <%= image_tag(@post.map.lg_map)%>
+        </div>
     </div>
   </div>
 </dl>
@@ -12,7 +21,7 @@
   <div class="list-group-item fontawesome-icon-list">
     <dt>
       <% posts_user = @post.user%>
-      <%= image_tag(@post.logo, :size => "100x120") %>
+      <%= image_tag(@post.logo, :size => "60x70") %>
     </dt>
     <dd>
       <div class="item-content">
@@ -189,9 +198,8 @@
 <%= link_to t('.back', :default => t("helpers.links.back")),
               :back, :class => 'btn btn-default'  %>
 
-<% if cannot? :update, @post %>
-<%= link_to t('.apply', :default => t("helpers.links.apply")),
-              apply_post_path, :class => 'btn btn-primary' %>
+<% if can? :apply, @post %>
+<%= link_to 'Apply', post_resume_apply_path(@post, @resume), class: "btn btn-primary" %>
 <% end %>
 
 <% if can? :update, @post %>
@@ -206,5 +214,6 @@
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
 <% end %>
+
 
 

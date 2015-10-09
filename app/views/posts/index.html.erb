@@ -6,7 +6,9 @@
   </div>
 <% end %>
 <div class="page-header">
-    <h1><%= @user.fullname %>, Top Jobs For You</h1>
+  <div id= "title-job">
+    <h1><%= @user.fullname %>,</br> Top Jobs For You</h1>
+  </div>
     <div class="ltnew" style="float:right; margin-top: -40px;">
     <% if cannot? :new, @post %>
       <%= link_to t('.new', :default => t("helpers.links.new")),
@@ -15,41 +17,43 @@
     <% end %>
     </div>
 </div>
-<table class="table table-striped" id="tbcenter">
-  <thead>
-    <tr>
-      <th style="text-align: center;">#</th>
-      <th><%= model_class.human_attribute_name(:title) %></th>
-      <th><%= model_class.human_attribute_name(:categories) %></th>
-      <th><%= model_class.human_attribute_name(:location) %></th>
-      <th><%= model_class.human_attribute_name(:position) %></th>
-      <th><%= model_class.human_attribute_name(:skill) %></th>
-      <th><%= model_class.human_attribute_name(:salary) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @posts.each_with_index  do |post, index| %>
+<div id="tb-index">
+  <table class="table table-striped" id="tbcenter">
+    <thead>
       <tr>
-        <% if (@pass_item+index < 5) %>
-        <td><span class="score"><span class="label label-danger">New</span></span></td>
-        <% else %>
-        <td style="text-align: center;"><%= @pass_item+index+1 %></td>
-        <% end %>
-        <td style="color:#00b9f2; font-size: 14px;"><%= post.title %></td>
-        <td><%= post.categories %></td>
-        <td><%= post.location %></td>
-        <td><%= post.position %></td>
-        <td><%= post.skill %></td>
-        <td><%= post.salary %></td>
-        <td>
-          <%= link_to t('.show', :default => t("helpers.links.view")),
-                      post, :class => 'btn btn-default btn-xs' %>
-        </td>
+        <th style="text-align: center;">#</th>
+        <th><%= model_class.human_attribute_name(:title) %></th>
+        <th><%= model_class.human_attribute_name(:categories) %></th>
+        <th><%= model_class.human_attribute_name(:location) %></th>
+        <th><%= model_class.human_attribute_name(:position) %></th>
+        <th><%= model_class.human_attribute_name(:skill) %></th>
+        <th><%= model_class.human_attribute_name(:salary) %></th>
+        <th><%=t '.actions', :default => t("helpers.actions") %></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @posts.each_with_index  do |post, index| %>
+        <tr>
+          <% if (@pass_item+index < 5) %>
+          <td><span class="score"><span class="label label-danger">New</span></span></td>
+          <% else %>
+          <td style="text-align: center;"><%= @pass_item+index+1 %></td>
+          <% end %>
+          <td style="color:#00b9f2; font-size: 14px;"><%= post.title %></td>
+          <td><%= post.categories %></td>
+          <td><%= post.location %></td>
+          <td><%= post.position %></td>
+          <td><%= post.skill %></td>
+          <td><%= post.salary %></td>
+          <td>
+            <%= link_to t('.show', :default => t("helpers.links.view")),
+                        post, :class => 'btn btn-default btn-xs' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <div class="apple_pagination">
   <%= will_paginate @posts, :remote => true %>

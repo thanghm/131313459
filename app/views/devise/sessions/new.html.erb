@@ -3,8 +3,11 @@
     <div class="modal-content">
         <div class="modal-header">
           <div class="text-center" id="loginbody">
-            <p>You need to sign in or sign up before continuing.</p>
+            <p><%= notice %></p>            
+            <%= alert %>
+            <div class="lg-ad">
             <%= link_to "Login for admin site ", rails_admin_path, :class => "btn btn-link" %><br>
+            </div>
           </div>
         </div>
         <div class="modal-body">

@@ -1,5 +1,9 @@
 class AddCategoriesToUsers < ActiveRecord::Migration
-  def change
-    add_column :users, :categories, :string
+  def up
+    add_column :users, :skill, :string
+  end
+
+  def down
+    remove_column :users, :categories, :string
   end
 end

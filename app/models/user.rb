@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   attr_accessor :login
   has_many :posts
   has_many :identities
+  has_many :resumes
+ 
 
   def self.find_for_authentication(conditions)
     login = conditions.delete(:login)

@@ -7,4 +7,5 @@ class Post < ActiveRecord::Base
 	scope :position, -> (position) { where("posts.position ilike ?", "#{position}%")}
 	default_scope -> { order(id: :desc) }
 	belongs_to :user
+	has_many :resumes
 end

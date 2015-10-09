@@ -1,8 +1,5 @@
-<% if !flash[:notice].blank? %>
-  <div class="alert alert-info">
-  <%= flash[:notice] %>
-  </div>
-<% end %>
+<%= notice %>
+<%= alert %>
 <div id="edituser">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -55,8 +52,8 @@
               </div>
 
               <div class="field">
-                <%= f.label :categories %><br />
-                <%= f.text_field :categories, :class => 'form-control', :placeholder => 'Enter categories..' %>
+                <%= f.label :skill %><br />
+                <%= f.text_field :skill, :class => 'form-control', :placeholder => 'Enter categories..' %>
               </div> 
 
               <div class="field">
