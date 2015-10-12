@@ -1,6 +1,8 @@
 <div class="block_search">
 	<div id="content">
 		<section>
+		<button id="toggle-post" class="btn btn-default btn-md" style="margin-bottom: 10px;">I am looking for...</button>
+		
 		<%= form_tag(posts_path, :method => "get", :action => 'index', id: "search-form") do %>
 			<div class="form-group">
 			  <div class="col-xs-8">

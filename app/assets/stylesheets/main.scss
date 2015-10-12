@@ -300,7 +300,17 @@ section{
 	border-radius: 5px;
 	background-color: #fff;
 	padding: 5px;
+	display:none;
 }
+
+#search-user{
+	border: 1px solid #dddddd;
+	border-radius: 5px;
+	background-color: #fff;
+	padding: 5px;
+	display:none;
+}
+
 #search-all{
 	font-size: 12px;
 	float: right;

@@ -45,6 +45,13 @@ $(document).ready(function () {
     }
   });
   
+  $("#toggle-post").click(function(){
+        $("#search-form").toggle("slow");
+    });
+    $("#toggle-user").click(function(){
+        $("#search-user").toggle("slow");
+    });
+  
   $("#regiter_ #new_user").validate({
     rules: {
       "user[username]": {
