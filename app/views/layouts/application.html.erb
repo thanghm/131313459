@@ -10,6 +10,9 @@
 <%= render 'shared/header' %>
 <%= render 'shared/banner' %>
 <%= render 'shared/main' %>
+<% if can? :searchuser, User %>
+	<%= render 'shared/search' %>
+<% end %>
 <div id="content">	
 	<section>
     <%= yield %>

@@ -97,11 +97,17 @@ class PostsController < ApplicationController
     @user = current_user
     @post = Post.where(user_id: current_user.id)
   end
+
+  def searchuser
+    @user_skill=params[:skill]
+    @user_location=params[:location]
+    @user_find=User.where(skill: @user_skill, location: @user_location )
+  end
   
   private
 
   def post_params
-    params.require(:post).permit(:title,:company, :body, :published, :user_id, :categories, :location, :position, :skill, :phone, :map, :logo, :about, :salary)
+    params.require(:post).permit(:title,:company, :address, :endday, :body, :published, :user_id, :categories, :location, :position, :skill, :phone, :map, :logo, :about, :salary)
   end
 
   def filtering_params(params)

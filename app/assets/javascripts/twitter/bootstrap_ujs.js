@@ -7,4 +7,7 @@
 	});
 })( jQuery );
 
+$(function() {
+    $( "#datepicker" ).datepicker();
+  });
 

@@ -1,5 +1,5 @@
 class Resume < ActiveRecord::Base
-	mount_uploader :attchment, AttachmentUploader
+	mount_uploader :attachment, AttachmentUploader
 	belongs_to :user
 	belongs_to :post
 end

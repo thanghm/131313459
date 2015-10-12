@@ -21,7 +21,7 @@
   <div class="list-group-item fontawesome-icon-list">
     <dt>
       <% posts_user = @post.user%>
-      <%= image_tag(@post.logo, :size => "60x70") %>
+      <%= image_tag(@post.logo, :size => "60x60") %>
     </dt>
     <dd>
       <div class="item-content">
@@ -113,7 +113,7 @@
     </dt>
     <dd>
       <div class="item-content">         
-        <%= @post.location %>         
+        <%= @post.address + @post.location %>         
       </div> 
     </dd>
   </div>
@@ -198,16 +198,16 @@
 <%= link_to t('.back', :default => t("helpers.links.back")),
               :back, :class => 'btn btn-default'  %>
 
-<% if can? :apply, @post %>
-<%= link_to 'Apply', post_resume_apply_path(@post, @resume), class: "btn btn-primary" %>
+<% if can? :apply, Post %>
+  <%= link_to 'Apply', post_resume_apply_path(@post, @resume), class: "btn btn-primary" %>
 <% end %>
 
-<% if can? :update, @post %>
+<% if can? :update, Post %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_user_post_path(@user, @post), :class => 'btn btn-default' %>
 <% end %>
 
-<% if can? :destroy, @post %>
+<% if can? :destroy, Post %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               user_post_path(@user, @post),
               :method => 'delete',

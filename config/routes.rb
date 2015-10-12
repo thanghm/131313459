@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     post '/posts' => 'posts#create'
     patch '/posts/:id' => 'posts#update'
     get '/users/allpost' => 'posts#manager_post'
+    get '/search' => 'users#searchuser'
     get 'posts/index/:page' => 'posts#index'
 
   resources :conversations, only: [:index, :show, :destroy] do
@@ -34,7 +35,7 @@ Rails.application.routes.draw do
   resources :messages, only: [:new, :create]
    
   resources :users do
-    resources :posts, only: [:index, :show, :new, :edit, :update, :destroy]
+    resources :posts, only: [:index, :show, :new, :edit, :update, :destroy] 
   end
   resources :posts, :only => [:index, :show, :apply] do
     resources :resumes, only: [:apply, :applyto] do

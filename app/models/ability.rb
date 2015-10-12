@@ -24,8 +24,9 @@ class Ability
     can :new, Post
     can :read, :all
     can :manage_post, Post
+    can :searchuser, User
     cannot :apply, Post
-    cannot :index, Resume
+    cannot :read, Resume
   end
 
   def admin

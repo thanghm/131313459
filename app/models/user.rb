@@ -11,7 +11,9 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :identities
   has_many :resumes
- 
+  
+  scope :skill, -> (skill) { where("users.skill like ?", "%#{skill}%")}
+  scope :location, -> (location) { where("users.address like ?", "%#{location}%")}
 
   def self.find_for_authentication(conditions)
     login = conditions.delete(:login)

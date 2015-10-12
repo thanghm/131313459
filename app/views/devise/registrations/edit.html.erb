@@ -5,7 +5,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h2>Edit <%= resource_name.to_s.humanize %></h2>
-          <div class="field">
+          <div class="field" id="img-avt">
             <label>Avatar</label><br />
             <%= image_tag(@user.avatar.medium_avatar)%>
           </div>
@@ -70,6 +70,11 @@
                 <%= f.label :about %><br />
                 <%= f.text_field :about, :class => 'form-control' %>
               </div>
+
+              <div class="field">
+                <%= f.label :salary %><br />
+                <%= f.text_field :salary, :class => 'form-control', :placeholder => 'Enter salary..' %>
+              </div> 
 
               <div class="field">
                 <% for roles in User::ROLES %>

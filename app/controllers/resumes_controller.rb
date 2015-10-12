@@ -99,6 +99,6 @@ class ResumesController < ApplicationController
     end
 
     def resume_params
-      params.require(:resume).permit(:attchment, :letter, :user_id, :post_id)
+      params.require(:resume).permit(:attachment, :letter, :user_id, :post_id)
     end
 end

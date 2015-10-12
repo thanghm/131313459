@@ -24,12 +24,32 @@
 	}
 	.modal .modal-body a {
 		color: #00b9f2;
-		font-weight: 700;
 	}
 }
 #img-map{
 	overflow: auto !important;
 }
+
+#img-map img{
+	padding: 8px;
+	background: #00B9F2 none repeat scroll 0% 0%;
+}
+
+#img-edit{
+	overflow: auto !important;
+}
+
+.pagination{
+	margin: 10px 0 !important;
+}
+.apple_pagination{
+	height: 40px !important;
+}
+#img-edit img{
+	padding: 8px;
+	background: #00B9F2 none repeat scroll 0% 0%;
+}
+
 #resume-tb{
 	overflow: auto !important;
 }
@@ -66,8 +86,21 @@
 		float: right;
 	}
 	.error{
-		color: red !important;
+		color: #00B9F2 !important;
+		font-weight: 100 !important;
 	}
+}
+
+#img-avt img{
+	box-shadow: 0 0 3px #aaa;
+  border-radius: 100px;
+  padding: 5px;
+}
+
+#dhabout img{
+	box-shadow: 0 0 3px #aaa;
+  border-radius: 100px;
+  padding: 5px;
 }
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{color: #f7941d !important;}
@@ -265,7 +298,7 @@ section{
 #search-form{
 	border: 1px solid #dddddd;
 	border-radius: 5px;
-	background-color: #333;
+	background-color: #fff;
 	padding: 5px;
 }
 #search-all{
@@ -273,9 +306,7 @@ section{
 	float: right;
 	margin-top: -5px;
 }
-.block_search{
-	padding-top: 5px;
-}
+
 #loginmodal .form-group{
 	padding: 0;
 	margin-bottom: 0;
@@ -426,7 +457,6 @@ section{
 	border: 1px solid #dddddd;
 }
 .form-horizontal textarea.form-control{
-	height: 110px;
 	resize: vertical;
 }
 

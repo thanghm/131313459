@@ -21,6 +21,30 @@ $(document).ready(function () {
       }        
     }
   });
+
+  $("#new_admin").validate({
+    rules: {
+      "admin[login]": {
+        required: true,
+        minlength: 4
+      },
+      "admin[password]": {
+        required: true,
+        minlength: 5
+      }       
+    },
+    messages: {
+      "admin[login]": {
+        required: "Please enter a valid username or email",
+        minlength: "Your username must be at least 4 characters long"
+      },
+      "admin[password]": {
+        required: "Please provide a password",
+        minlength: "Your password must be at least 5 characters long"
+      }        
+    }
+  });
+  
   $("#regiter_ #new_user").validate({
     rules: {
       "user[username]": {
@@ -94,7 +118,16 @@ $(document).ready(function () {
           },
           "post[salary]": {
             required: true
-          }         
+          },
+          categories:{
+            required: true
+          },
+          location:{
+            required: true
+          },
+          position:{
+            required: true
+          }        
         },
         messages: {
           "post[title]": {
@@ -117,6 +150,15 @@ $(document).ready(function () {
           },
           "post[salary]": {
             required: "Enter salary ??"     
+          },
+          categories: {
+            required: "Select categories"     
+          },
+          location: {
+            required: "Select location"     
+          },
+          position: {
+            required: "Select position"     
           }   
         }
     });
@@ -160,6 +202,9 @@ $(document).ready(function () {
       "user[about]": {
         required: true,
         minlength: 4
+      },
+       "user[salary]": {
+        required: true
       }
 
     },
@@ -199,7 +244,10 @@ $(document).ready(function () {
       "user[about]": {
         required: "Please provide about of you",
         minlength: "Your about must be at least 4 characters long"
-      }         
+      },
+      "user[salary]": {
+        required: "Please provide salary",
+      }          
     }
   });
   $("#newmess").validate({

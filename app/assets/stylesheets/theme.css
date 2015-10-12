@@ -224,7 +224,7 @@ select.chosen-select{ display:none }
 .ui-widget button, .ui-widget input, .ui-widget select, .ui-widget textarea{ font-size:1em }
 .ui-widget-content{ border:1px solid #ddd; background:#fafafa; color:#555 }
 .ui-widget-content a{ color:#555 }
-.ui-widget-header{ border:1px solid #e78f08; background:#f7941d; color:#fff; font-weight:700 }
+.ui-widget-header{ border:1px solid #e78f08; background:#00b9f2; color:#fff; font-weight:700 }
 .ui-widget-header a{ color:#fff }
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{ border:1px solid #ccc; background:#f6f6f6; font-weight:700; color:#00b9f2 }
 .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited{ color:#00b9f2; text-decoration:none }

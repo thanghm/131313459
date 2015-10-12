@@ -1,6 +1,10 @@
-<%- model_class = Post -%>
-	<div class="page-header" style="text-align:center;">
-	  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
-	  <%= image_tag(@post.map.lg_map)%>
-	</div>
-<%= render :partial => 'form' %>
+<div class="well">	
+	<%- model_class = Post -%>
+		<div class="page-header" style="text-align:center;">
+		  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
+		  <div id="img-edit">
+		  	<%= image_tag(@post.map.lg_map)%>
+		  </div>
+		</div>
+	<%= render :partial => 'form' %>
+</div>

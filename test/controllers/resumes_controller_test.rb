@@ -18,7 +18,7 @@ class ResumesControllerTest < ActionController::TestCase
 
   test "should create resume" do
     assert_difference('Resume.count') do
-      post :create, resume: { attchment: @resume.attchment, letter: @resume.letter }
+      post :create, resume: { attachment: @resume.attachment, letter: @resume.letter }
     end
 
     assert_redirected_to resume_path(assigns(:resume))
@@ -35,7 +35,7 @@ class ResumesControllerTest < ActionController::TestCase
   end
 
   test "should update resume" do
-    patch :update, id: @resume, resume: { attchment: @resume.attchment, letter: @resume.letter }
+    patch :update, id: @resume, resume: { attachment: @resume.attachment, letter: @resume.letter }
     assert_redirected_to resume_path(assigns(:resume))
   end
 

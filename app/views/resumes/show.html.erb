@@ -7,26 +7,28 @@
 
 
 <h1>Listing Resumes</h1>
-<div id="resume-show">
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>Attchment</th>
-        <th>Letter</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+  <div class="well">
+    <div id="resume-show">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Attachment</th>
+            <th>Letter</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-    <tbody>
-        <tr>
-          <td><%= @resume.attchment.original_filename %></td>
-          <td><%= @resume.letter %></td>
-          <td><%= link_to "Show", @resume.attchment_url, class: "btn btn-default btn-sm" %>
-          <%= link_to 'Edit', edit_user_resume_path(@user, @resume), class: "btn btn-primary btn-sm" %>
-          <%= link_to 'Destroy', user_resume_path(@user, @resume), method: :delete, class: "btn btn-danger btn-sm", data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-    </tbody>
-  </table>
+        <tbody>
+            <tr>
+              <td><%= @resume.attachment.original_filename %></td>
+              <td><%= @resume.letter %></td>
+              <td><%= link_to "Show", @resume.attachment_url, class: "btn btn-default btn-sm" %>
+              <%= link_to 'Edit', edit_user_resume_path(@user, @resume), class: "btn btn-primary btn-sm" %>
+              <%= link_to 'Destroy', user_resume_path(@user, @resume), method: :delete, class: "btn btn-danger btn-sm", data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+  <%= link_to 'Back', :back, class: "btn btn-link btn-sm" %>
 </div>
-
-<%= link_to 'Back', :back, class: "btn btn-link btn-sm" %>
