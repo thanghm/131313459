@@ -22,6 +22,26 @@ $(document).ready(function () {
     }
   });
 
+  $("#new_resume").validate({
+    rules: {
+      attachment: {
+        required: true
+      },
+      "resume[letter]": {
+        required: true,
+        minlength: 5
+      }       
+    },
+    messages: {
+      attachment: {
+        required: "This File Is Required"
+      },
+      "resume[letter]": {
+        required: "Please provide a letter",
+        minlength: "Your letter must be at least 5 characters long"
+      }        
+    }
+  });
   $("#new_admin").validate({
     rules: {
       "admin[login]": {

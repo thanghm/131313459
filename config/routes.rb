@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     get '/users/allpost' => 'posts#manager_post'
     get '/search' => 'users#searchuser'
     get 'posts/index/:page' => 'posts#index'
+    get 'applyjob' => 'resumes#applyjob'
 
   resources :conversations, only: [:index, :show, :destroy] do
     member do

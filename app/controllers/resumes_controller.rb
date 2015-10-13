@@ -69,6 +69,12 @@ class ResumesController < ApplicationController
     end
   end
 
+  def applyjob
+    @user = current_user
+    @resume_job_all = Resume.where.not(post_id: nil)
+    @resume_job = @resume_job_all.where(user_id: current_user.id)
+  end
+
   def update
     @user = current_user
     @resume = Resume.find(params[:id])

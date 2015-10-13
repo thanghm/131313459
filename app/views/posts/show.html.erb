@@ -65,7 +65,7 @@
     <dt>
       <div class="item-icon">
         <span class="fa-stack fa-1x">
-          <i class="fa fa-circle fa-stack-2x fa-gray"></i> <i class="fa fa-dollar fa-stack-1x"></i><span class="mdname"><%= model_class.human_attribute_name(:created_at) %>:</span>   
+          <i class="fa fa-circle fa-stack-2x fa-gray"></i> <i class="fa fa-dollar fa-stack-1x"></i><span class="mdname">Start day:</span>   
         </span>    
       </div>
     </dt>
@@ -75,6 +75,22 @@
       </div> 
     </dd>
   </div>
+
+  <div class="list-group-item fontawesome-icon-list">
+    <dt>
+      <div class="item-icon">
+        <span class="fa-stack fa-1x">
+          <i class="fa fa-circle fa-stack-2x fa-gray"></i> <i class="fa fa-dollar fa-stack-1x"></i><span class="mdname"><%= model_class.human_attribute_name(:endday) %>:</span>   
+        </span>    
+      </div>
+    </dt>
+    <dd>
+      <div class="item-content">         
+        <%= @post.endday %>         
+      </div> 
+    </dd>
+  </div>
+
   <div class="list-group-item fontawesome-icon-list">
     <dt>
       <div class="item-icon">
